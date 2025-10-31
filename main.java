@@ -1,5 +1,5 @@
 package javaapplication46;
-public class JavaApplication46 {
+public class main{
     public static void main(String[] args) {
         
     }
