@@ -6,3 +6,4 @@ public class [nomobre de la clase] {
 
     
 }
+![Texto alternativo](ruta/a/tu/imagen.jpg)
