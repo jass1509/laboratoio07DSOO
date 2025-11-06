@@ -30,4 +30,15 @@ public class Empleado extends Persona {
     public String getCodigoEmpleado() {
         return codigoEmpleado;
     }
+    @Override
+    public String toString() {
+        return "Empleado: " +
+                "codigoEmpleado='" + codigoEmpleado + '\'' +
+                "| nombre='" + getNombre() + " " + getApellido() + '\'' +
+                "| telefono='" + getTelefono() + '\'' +
+                "| email='" + getEmail() + '\'' +
+                "| salario=" + salario +
+                "| departamento='" + departamento + '\'';
+    }
+
 }
