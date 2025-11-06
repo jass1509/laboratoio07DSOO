@@ -13,10 +13,14 @@ public class MenuSistema {
         sistema = new Sistema("Banco Pichincha", "SYS001");
 
         // Inicialización de ejemplo
-        Empleado emp1 = new Empleado("Carlos", "Pérez", "999888777", "carlosP@gmail.com",
+        Empleado emp1 = new Empleado("Carlos", "Pérez", "912067512", "carlosP@gmail.com",
                 new Date(90, 5, 12), "E001", new Date(), 2500, "Cajas");
         sistema.registrarPersona(emp1);
-        empleadoActivo = emp1; // El empleado que realiza las operaciones
+        empleadoActivo = emp1; // empleado activo por defecto
+
+        Empleado emp2 = new Empleado("Jose", "Zimmerman", "994453665", "joseZ@gmail.com",
+                new Date(85, 7, 28), "E002", new Date(), 3500, "Administración");
+        sistema.registrarPersona(emp2);
 
         Cliente cli1 = new Cliente("Ana", "Zapana", "956564871", "anaZ@gmail.com",
                 new Date(95, 3, 25), "C001");
@@ -33,39 +37,84 @@ public class MenuSistema {
         int opcion;
         do {
             System.out.println("\n===== MENÚ DEL SISTEMA =====");
-            System.out.println("1. Ver clientes");
-            System.out.println("2. Crear cuenta");
-            System.out.println("3. Hacer depósito");
-            System.out.println("4. Hacer retiro");
-            System.out.println("5. Ver movimientos");
-            System.out.println("6. Salir");
+            System.out.println("1. Ver empleados");
+            System.out.println("2. Agregar empleado");
+            System.out.println("3. Agregar cliente");
+            System.out.println("4. Ver clientes");
+            System.out.println("5. Crear cuenta");
+            System.out.println("6. Ver cuentas de un cliente");
+            System.out.println("7. Hacer depósito");
+            System.out.println("8. Hacer retiro");
+            System.out.println("9. Ver movimientos");
+            System.out.println("10. Salir");
             System.out.print("Elija una opción: ");
             opcion = leerEntero();
 
             switch (opcion) {
-                case 1:
-                    verClientes();
-                    break;
-                case 2:
-                    crearCuenta();
-                    break;
-                case 3:
-                    hacerDeposito();
-                    break;
-                case 4:
-                    hacerRetiro();
-                    break;
-                case 5:
-                    verMovimientos();
-                    break;
-                case 6:
-                    System.out.println("Saliendo del sistema...");
-                    break;
-                default:
-                    System.out.println("Opción inválida.");
+                case 1 -> verEmpleados();
+                case 2 -> agregarEmpleado();
+                case 3 -> agregarCliente();
+                case 4 -> verClientes();
+                case 5 -> crearCuenta();
+                case 6 -> verCuentasCliente();
+                case 7 -> hacerDeposito();
+                case 8 -> hacerRetiro();
+                case 9 -> verMovimientos();
+                case 10 -> System.out.println("Saliendo del sistema...");
+                default -> System.out.println("Opción inválida.");
             }
 
-        } while (opcion != 6);
+        } while (opcion != 10);
+    }
+
+    private void verEmpleados() {
+        System.out.println("\n-- Lista de Empleados --");
+        ArrayList<String> empleados = sistema.generarReporte("empleados");
+        for (String info : empleados) {
+            System.out.println(info);
+        }
+    }
+
+    private void agregarEmpleado() {
+        System.out.println("\n-- Registro de nuevo empleado --");
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+        System.out.print("Apellido: ");
+        String apellido = sc.nextLine();
+        System.out.print("Teléfono: ");
+        String telefono = sc.nextLine();
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+        System.out.print("Código empleado: ");
+        String codigo = sc.nextLine();
+        System.out.print("Salario: ");
+        double salario = leerDouble();
+        System.out.print("Departamento: ");
+        String dep = sc.nextLine();
+
+        Empleado nuevo = new Empleado(nombre, apellido, telefono, email,
+                new Date(95, 0, 1), codigo, new Date(), salario, dep);
+
+        sistema.registrarPersona(nuevo);
+        System.out.println("Empleado agregado correctamente.");
+    }
+
+    private void agregarCliente() {
+        System.out.println("\n-- Registro de nuevo cliente --");
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+        System.out.print("Apellido: ");
+        String apellido = sc.nextLine();
+        System.out.print("Teléfono: ");
+        String telefono = sc.nextLine();
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+        System.out.print("ID cliente: ");
+        String id = sc.nextLine();
+
+        Cliente nuevo = new Cliente(nombre, apellido, telefono, email, new Date(95, 0, 1), id);
+        sistema.registrarPersona(nuevo);
+        System.out.println("Cliente agregado correctamente.");
     }
 
     private void verClientes() {
@@ -87,7 +136,24 @@ public class MenuSistema {
             System.out.print("Saldo inicial: ");
             double saldo = leerDouble();
             Cuenta nueva = sistema.crearCuenta(c, tipo, saldo);
-            System.out.println("Cuenta creada: " + nueva.getNumeroCuenta());
+            System.out.println("Cuenta creada correctamente. Número: " + nueva.getNumeroCuenta());
+        } else {
+            System.out.println("Cliente no encontrado.");
+        }
+    }
+
+    private void verCuentasCliente() {
+        System.out.print("Ingrese ID del cliente: ");
+        String id = sc.nextLine();
+        Persona p = sistema.buscarPersona(id);
+        if (p instanceof Cliente) {
+            Cliente c = (Cliente) p;
+            System.out.println("\n-- Cuentas de " + c.getNombreCompleto() + " --");
+            for (Titularidad t : c.getTitularidades()) {
+                Cuenta cuenta = t.getCuenta();
+                System.out.println("Número: " + cuenta.getNumeroCuenta() + " | Tipo: " +
+                        cuenta.getTipoCuenta() + " | Saldo: " + cuenta.getSaldo());
+            }
         } else {
             System.out.println("Cliente no encontrado.");
         }
