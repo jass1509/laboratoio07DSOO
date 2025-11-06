@@ -3,6 +3,7 @@ import java.util.Date;
 
 public class Persona {
 
+	//Atributos superclase persona
     protected String nombre;
     protected String apellido;
     protected String telefono;
