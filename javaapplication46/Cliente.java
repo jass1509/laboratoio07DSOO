@@ -1,9 +1,12 @@
 package javaapplication46;
 import java.util.ArrayList;
+
 import java.util.Date;
 
 public class Cliente extends Persona {
-
+	
+	
+	//Atributos subclase cliente
     private String idCliente;
     private ArrayList<Titularidad> titularidades;
 
