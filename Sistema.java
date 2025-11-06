@@ -6,6 +6,7 @@ public class Sistema {
     private String codigoIdentificacion;
     private ArrayList<Cliente> listaClientes;
     private ArrayList<Empleado> listaEmpleados;
+    private static int contadorCuentas = 1; 
 
     public Sistema(String nombreSistema, String codigoIdentificacion) {
         this.nombreSistema = nombreSistema;
@@ -14,7 +15,6 @@ public class Sistema {
         this.listaEmpleados = new ArrayList<>();
     }
 
-    // Registrar una persona(puede ser cliente o empleado)
     public boolean registrarPersona(Persona p) {
         if (p instanceof Cliente) {
             listaClientes.add((Cliente) p);
@@ -26,7 +26,6 @@ public class Sistema {
         return false;
     }
 
-    // Buscar persona por nombre o ID
     public Persona buscarPersona(String criterio) {
         for (Cliente c : listaClientes) {
             if (c.getNombreCompleto().equalsIgnoreCase(criterio) ||
@@ -43,21 +42,19 @@ public class Sistema {
         return null;
     }
 
-    // Crear una cuenta nueva para un cliente
     public Cuenta crearCuenta(Cliente c, String tipo, double saldoInicial) {
-        String numeroCuenta = "C" + (int) (Math.random() * 10000);
+        
+        String numeroCuenta = "C" + (contadorCuentas++);
         Cuenta nuevaCuenta = new Cuenta(numeroCuenta, saldoInicial, tipo);
         Titularidad t = new Titularidad(c, nuevaCuenta, new java.util.Date(), true);
         c.agregarTitularidad(t);
         return nuevaCuenta;
     }
 
-    // Gestionar una transacción
     public boolean gestionarTransaccion(Transaccion t) {
         return t.procesar(t.cuentaRegistra);
     }
 
-    // Generar un reporte básico de tipo solicitado
     public ArrayList<String> generarReporte(String tipo) {
         ArrayList<String> reporte = new ArrayList<>();
 
@@ -81,4 +78,3 @@ public class Sistema {
                " | Empleados: " + listaEmpleados.size();
     }
 }
-
