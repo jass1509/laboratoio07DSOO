@@ -1,6 +1,7 @@
 package javaapplication46;
 
 import java.util.Date;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +10,8 @@ public class Main {
         MenuSistema menu = new MenuSistema();
         Scanner sc = new Scanner(System.in);
         Sistema sistema = new Sistema("Banco Pichincha", "SYS001");
+        
+       //Iterador opcional hasta que se ingrese 0
         int opcion;
         do {
             System.out.println("\n===== MENÚ DEL SISTEMA =====");
