@@ -34,4 +34,3 @@ public abstract class Transaccion {
                " | Cuenta: " + (cuentaRegistra != null ? cuentaRegistra.getNumeroCuenta() : "Sin cuenta");
     }
 }
-
