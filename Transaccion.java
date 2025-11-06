@@ -16,13 +16,15 @@ public abstract class Transaccion {
         this.cuentaRegistra = cuentaRegistra;
     }
 
+    // Devuelve el monto de la transacción
     public double getMonto() {
         return monto;
     }
 
-    // Se implementa según el tipo (Depósito / Retiro)
+    // Método abstracto que se implementa según el tipo de transacción 
     public abstract boolean procesar(Cuenta c);
 
+    // Retorna información para mostrar o registrar 
     @Override
     public String toString() {
         return "ID: " + idTransaccion +
