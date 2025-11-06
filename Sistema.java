@@ -14,7 +14,7 @@ public class Sistema {
         this.listaEmpleados = new ArrayList<>();
     }
 
-    // Registrar una persona (puede ser cliente o empleado)
+    // Registrar una persona(puede ser cliente o empleado)
     public boolean registrarPersona(Persona p) {
         if (p instanceof Cliente) {
             listaClientes.add((Cliente) p);
@@ -52,7 +52,7 @@ public class Sistema {
         return nuevaCuenta;
     }
 
-    // Gestionar (procesar) una transacción
+    // Gestionar una transacción
     public boolean gestionarTransaccion(Transaccion t) {
         return t.procesar(t.cuentaRegistra);
     }
@@ -81,3 +81,4 @@ public class Sistema {
                " | Empleados: " + listaEmpleados.size();
     }
 }
+
