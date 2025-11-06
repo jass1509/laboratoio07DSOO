@@ -2,23 +2,23 @@ import java.util.Date;
 
 public class Deposito extends Transaccion {
 
-    private String motivo;
-
-    public Deposito(String idTransaccion, double monto, Date fecha, Empleado empleadoGestor, Cuenta cuentaRegistra, String motivo) {
-        super(idTransaccion, monto, fecha, empleadoGestor, cuentaRegistra);
-        this.motivo = motivo;
+    public Deposito(String codigo, double monto, Date fecha, Empleado empleado, Cuenta cuenta, String motivo) {
+        super(codigo, monto, fecha, empleado, cuenta, motivo);
     }
 
-    // Deposita el dinero y registra el movimiento
     @Override
-    public boolean procesar(Cuenta c) {
-        c.depositar(monto);
-        c.addMovimiento(this);
+    public boolean procesar(Cuenta cuentaRegistra) {
+        cuentaRegistra.depositar(monto);
+        cuentaRegistra.addMovimiento(this);
         return true;
     }
 
     @Override
     public String toString() {
-        return "Depósito | " + super.toString() + " | Motivo: " + motivo;
+        return "[DEPÓSITO] Código: " + codigo +
+                " | Monto: " + monto +
+                " | Fecha: " + fecha +
+                " | Cuenta: " + cuentaRegistra.getNumeroCuenta() +
+                " | Motivo: " + motivo;
     }
 }
