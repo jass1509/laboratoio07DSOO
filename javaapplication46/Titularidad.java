@@ -1,3 +1,4 @@
+package javaapplication46;
 import java.util.Date;
 
 public class Titularidad {
