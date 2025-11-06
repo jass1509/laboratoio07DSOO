@@ -10,9 +10,6 @@ public class MenuSistema {
     private Empleado empleadoActivo;
 
     public MenuSistema() {
-        sc = new Scanner(System.in);
-        sistema = new Sistema("Banco Pichincha", "SYS001");
-
         // Inicialización de ejemplo
         Empleado emp1 = new Empleado("Carlos", "Pérez", "912067512", "carlosP@gmail.com",
                 new Date(90, 5, 12), "E001", new Date(), 2500, "Cajas");
@@ -34,63 +31,7 @@ public class MenuSistema {
         sistema.crearCuenta(cli2, "Corriente", 2000);
     }
 
-    public void mostrarMenu() {
-        int opcion;
-        do {
-            System.out.println("\n===== MENÚ DEL SISTEMA =====");
-            System.out.println("1. Ver empleados");
-            System.out.println("2. Agregar empleado");
-            System.out.println("3. Agregar cliente");
-            System.out.println("4. Ver clientes");
-            System.out.println("5. Crear cuenta");
-            System.out.println("6. Ver cuentas de un cliente");
-            System.out.println("7. Hacer depósito");
-            System.out.println("8. Hacer retiro");
-            System.out.println("9. Ver movimientos");
-            System.out.println("10. Salir");
-            System.out.print("Elija una opción: ");
-            opcion = leerEntero();
-
-           switch (opcion) {
-    case 1:
-        verEmpleados();
-        break;
-    case 2:
-        agregarEmpleado();
-        break;
-    case 3:
-        agregarCliente();
-        break;
-    case 4:
-        verClientes();
-        break;
-    case 5:
-        crearCuenta();
-        break;
-    case 6:
-        verCuentasCliente();
-        break;
-    case 7:
-        hacerDeposito();
-        break;
-    case 8:
-        hacerRetiro();
-        break;
-    case 9:
-        verMovimientos();
-        break;
-    case 10:
-        System.out.println("Saliendo del sistema...");
-        break;
-    default:
-        System.out.println("Opción inválida.");
-        break;
-}
-
-        } while (opcion != 10);
-    }
-
-    private void verEmpleados() {
+    public void verEmpleados() {
         System.out.println("\n-- Lista de Empleados --");
         ArrayList<String> empleados = sistema.generarReporte("empleados");
         for (String info : empleados) {
@@ -98,7 +39,7 @@ public class MenuSistema {
         }
     }
 
-    private void agregarEmpleado() {
+    public void agregarEmpleado() {
         System.out.println("\n-- Registro de nuevo empleado --");
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -122,7 +63,7 @@ public class MenuSistema {
         System.out.println("Empleado agregado correctamente.");
     }
 
-    private void agregarCliente() {
+    public void agregarCliente() {
         System.out.println("\n-- Registro de nuevo cliente --");
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -140,7 +81,7 @@ public class MenuSistema {
         System.out.println("Cliente agregado correctamente.");
     }
 
-    private void verClientes() {
+    public void verClientes() {
         System.out.println("\n-- Lista de Clientes --");
         ArrayList<String> clientes = sistema.generarReporte("clientes");
         for (String info : clientes) {
@@ -148,7 +89,7 @@ public class MenuSistema {
         }
     }
 
-    private void crearCuenta() {
+    public void crearCuenta() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
         Persona p = sistema.buscarPersona(id);
@@ -165,7 +106,7 @@ public class MenuSistema {
         }
     }
 
-    private void verCuentasCliente() {
+    public void verCuentasCliente() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
         Persona p = sistema.buscarPersona(id);
@@ -182,7 +123,7 @@ public class MenuSistema {
         }
     }
 
-    private void hacerDeposito() {
+    public void hacerDeposito() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
         Persona p = sistema.buscarPersona(id);
@@ -208,7 +149,7 @@ public class MenuSistema {
         }
     }
 
-    private void hacerRetiro() {
+    public void hacerRetiro() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
         Persona p = sistema.buscarPersona(id);
@@ -235,7 +176,7 @@ public class MenuSistema {
         }
     }
 
-    private void verMovimientos() {
+    public void verMovimientos() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
         Persona p = sistema.buscarPersona(id);
@@ -252,7 +193,7 @@ public class MenuSistema {
         }
     }
 
-    private int leerEntero() {
+    public int leerEntero() {
         while (true) {
             try {
                 return Integer.parseInt(sc.nextLine());
@@ -262,7 +203,7 @@ public class MenuSistema {
         }
     }
 
-    private double leerDouble() {
+    public double leerDouble() {
         while (true) {
             try {
                 return Double.parseDouble(sc.nextLine());
