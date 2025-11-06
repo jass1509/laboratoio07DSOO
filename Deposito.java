@@ -9,7 +9,7 @@ public class Deposito extends Transaccion {
         this.motivo = motivo;
     }
 
-    // Suma saldo y registra el movimiento //
+    // Deposita el dinero y registra el movimiento
     @Override
     public boolean procesar(Cuenta c) {
         c.depositar(monto);
