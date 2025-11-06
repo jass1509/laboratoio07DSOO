@@ -16,20 +16,28 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    // Retorna nombre completo //
+    // Retorna nombre completo
     public String getNombreCompleto() {
         return nombre + " " + apellido;
     }
 
-    // Actualiza teléfono y correo //
+    // Actualiza datos de contacto
     public void actualizarContacto(String telefono, String email) {
         this.telefono = telefono;
         this.email = email;
     }
 
-    // Calcula edad aproximada según año //
+    // Calcula edad aproximada (sin usar Calendar)
     public int calcularEdad() {
         Date hoy = new Date();
-        return hoy.getYear() - fechaNacimiento.getYear();
+        int años = hoy.getYear() - fechaNacimiento.getYear();
+
+        // Ajuste si aún no cumplió años este año
+        if (hoy.getMonth() < fechaNacimiento.getMonth()
+                || (hoy.getMonth() == fechaNacimiento.getMonth() && hoy.getDate() < fechaNacimiento.getDate())) {
+            años--;
+        }
+
+        return años;
     }
 }
