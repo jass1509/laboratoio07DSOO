@@ -3,12 +3,11 @@ import java.util.Date;
 public class Retiro extends Transaccion {
 
     private boolean limiteSuperado;
-    private String motivo;
     private double limite = 1000; // Límite simple permitido
 
-    public Retiro(String idTransaccion, double monto, Date fecha, Empleado empleadoGestor, Cuenta cuentaRegistra, String motivo) {
-        super(idTransaccion, monto, fecha, empleadoGestor, cuentaRegistra);
-        this.motivo = motivo;
+    public Retiro(String idTransaccion, double monto, Date fecha, Empleado empleadoGestor,
+                  Cuenta cuentaRegistra, String motivo) {
+        super(idTransaccion, monto, fecha, empleadoGestor, cuentaRegistra, motivo);
         this.limiteSuperado = false;
     }
 
@@ -35,7 +34,10 @@ public class Retiro extends Transaccion {
 
     @Override
     public String toString() {
-        return "Retiro | " + super.toString() +
+        return "[RETIRO] Código: " + codigo +
+                " | Monto: " + monto +
+                " | Fecha: " + fecha +
+                " | Cuenta: " + cuentaRegistra.getNumeroCuenta() +
                 " | Motivo: " + motivo +
                 " | Límite superado: " + limiteSuperado;
     }
