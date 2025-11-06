@@ -17,17 +17,16 @@ public class Empleado extends Persona {
         this.departamento = departamento;
     }
 
-    // Autoriza transacción (por ahora siempre true) //
+    // Por ahora siempre autoriza transacción
     public boolean autorizarTransaccion(Transaccion t) {
         return true;
     }
 
-    // Retorna info básica de auditoría //
+    // Información simple de auditoría
     public String auditarCuenta(Cuenta c) {
         return "Cuenta: " + c.getNumeroCuenta() + " | Saldo: " + c.getSaldo();
     }
 
-    // Retorna código //
     public String getCodigoEmpleado() {
         return codigoEmpleado;
     }
