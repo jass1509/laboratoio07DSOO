@@ -20,22 +20,39 @@ public class Cliente extends Persona {
         titularidades.add(t);
     }
 
-    // Busca una cuenta por su número
-    public Cuenta buscarCuenta(String numeroCuenta) {
-        for (Titularidad t : titularidades) {
-            Cuenta c = t.getCuenta();
-            if (c.getNumeroCuenta().equals(numeroCuenta)) {
-                return c;
-            }
-        }
-        return null; // si no la encuentra
+    public ArrayList<Titularidad> getTitularidades() {
+        return titularidades;
     }
 
-    // Transfiere dinero entre cuentas (básico)
+    // Buscar una cuenta por su número
+    public Cuenta buscarCuenta(String numero) {
+        for (Titularidad t : titularidades) {
+            if (t.getCuenta().getNumeroCuenta().equalsIgnoreCase(numero)) {
+                return t.getCuenta();
+            }
+        }
+        return null;
+    }
+
+    // Consultar movimientos de todas sus cuentas
+    public ArrayList<Transaccion> consultarMovimientos(String criterio) {
+        ArrayList<Transaccion> lista = new ArrayList<>();
+        for (Titularidad t : titularidades) {
+            for (Transaccion tr : t.getCuenta().consultarMovimientos()) {
+                if (tr.toString().contains(criterio)) {
+                    lista.add(tr);
+                }
+            }
+        }
+        return lista;
+    }
+
+    // Transferir dinero a otra cuenta
     public boolean transferir(Cuenta destino, double monto) {
         for (Titularidad t : titularidades) {
             Cuenta origen = t.getCuenta();
-            if (origen.retirar(monto)) {
+            if (origen.getSaldo() >= monto) {
+                origen.retirar(monto);
                 destino.depositar(monto);
                 return true;
             }
@@ -45,7 +62,6 @@ public class Cliente extends Persona {
 
     @Override
     public String toString() {
-        return "Cliente: " + getNombreCompleto() + " | ID: " + idCliente + 
-               " | Nº de cuentas: " + titularidades.size();
+        return "Cliente: " + getNombreCompleto() + " | ID: " + idCliente + " | Cuentas: " + titularidades.size();
     }
 }
