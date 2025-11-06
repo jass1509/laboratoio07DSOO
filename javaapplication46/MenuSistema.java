@@ -8,10 +8,14 @@ import PaqueteClases.Sistema;
 
 public class MenuSistema {
 
+	
+	//Atributos para un objeto cualquiera para empezar el programa
     private Sistema sistema;
     private Scanner sc;
     private Empleado empleadoActivo;
 
+    
+    //Creacion de datos inicializados
     public MenuSistema() {
         //Creando objeto sistema
     		this.sistema = new Sistema("BANCO BCP", "CV2");
@@ -37,6 +41,8 @@ public class MenuSistema {
         sistema.crearCuenta(cli2, "Corriente", 2000);
     }
 
+    
+    //Muestra todos los empleados
     public void verEmpleados() {
         System.out.println("\n-- Lista de Empleados --");
         ArrayList<String> empleados = sistema.generarReporte("empleados");
@@ -45,6 +51,7 @@ public class MenuSistema {
         }
     }
 
+    //Ingresa un empleado con sus propiedades por ingreso de datos
     public void agregarEmpleado() {
         System.out.println("\n-- Registro de nuevo empleado --");
         System.out.print("Nombre: ");
@@ -69,6 +76,8 @@ public class MenuSistema {
         System.out.println("Empleado agregado correctamente.");
     }
 
+    
+    //Registro de cliente por ingreso de datos
     public void agregarCliente() {
         System.out.println("\n-- Registro de nuevo cliente --");
         System.out.print("Nombre: ");
@@ -87,6 +96,8 @@ public class MenuSistema {
         System.out.println("Cliente agregado correctamente.");
     }
 
+    
+    //Muestra todos los clientes registrados
     public void verClientes() {
         System.out.println("\n-- Lista de Clientes --");
         ArrayList<String> clientes = sistema.generarReporte("clientes");
@@ -95,6 +106,7 @@ public class MenuSistema {
         }
     }
 
+    //Creación básicade una cuenta en un banco
     public void crearCuenta() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
@@ -112,6 +124,8 @@ public class MenuSistema {
         }
     }
 
+    
+    //Muestra todas las cuentas creadas en el banco
     public void verCuentasCliente() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
@@ -129,6 +143,8 @@ public class MenuSistema {
         }
     }
 
+    
+    //Metodo de peticion de deposito
     public void hacerDeposito() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
@@ -155,6 +171,7 @@ public class MenuSistema {
         }
     }
 
+    //Metodo para la configuracion de un retiro, verifica condiciones necesarias
     public void hacerRetiro() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
@@ -182,6 +199,8 @@ public class MenuSistema {
         }
     }
 
+    
+    //Muestra todos los movimientos
     public void verMovimientos() {
         System.out.print("Ingrese ID del cliente: ");
         String id = sc.nextLine();
@@ -199,6 +218,8 @@ public class MenuSistema {
         }
     }
 
+    
+    //Verificacion de datos correctos con atrape de error
     public int leerEntero() {
         while (true) {
             try {
