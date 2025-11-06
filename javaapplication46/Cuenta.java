@@ -15,6 +15,8 @@ public class Cuenta {
         this.movimientos = new ArrayList<>();
     }
 
+    
+    //Getters y setters
     public String getNumeroCuenta() {
         return numeroCuenta;
     }
@@ -27,10 +29,14 @@ public class Cuenta {
         return tipoCuenta;
     }
 
+    
+    //Añadiendo saldo 
     public void depositar(double monto) {
         saldo += monto;
     }
 
+    
+    //Quitando saldo
     public boolean retirar(double monto) {
         if (saldo >= monto) {
             saldo -= monto;
@@ -39,14 +45,19 @@ public class Cuenta {
         return false;
     }
 
+    
+    //Añadiendo el movimiento al registro
     public void addMovimiento(Transaccion t) {
         movimientos.add(t);
     }
 
+    
+    //Impresión de todos los movimientos
     public ArrayList<Transaccion> consultarMovimientos() {
         return movimientos;
     }
 
+    //Metodo toString
     @Override
     public String toString() {
         return "Cuenta " + numeroCuenta + " | Tipo: " + tipoCuenta + " | Saldo: " + saldo;
