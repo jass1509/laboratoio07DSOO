@@ -15,6 +15,7 @@ public class MenuSistema {
     public MenuSistema() {
         //Creando objeto sistema
     		this.sistema = new Sistema("BANCO BCP", "CV2");
+		this.sc = new Scanner(System.in);
     		// Inicialización de ejemplo
         Empleado emp1 = new Empleado("Carlos", "Pérez", "912067512", "carlosP@gmail.com",
                 new Date(90, 5, 12), "E001", new Date(), 2500, "Cajas");
