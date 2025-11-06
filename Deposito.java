@@ -9,17 +9,16 @@ public class Deposito extends Transaccion {
         this.motivo = motivo;
     }
 
-    // Procesa el depósito (suma al saldo)
+    // Suma saldo y registra el movimiento //
     @Override
     public boolean procesar(Cuenta c) {
-        if (c == null) return false;
-        c.setSaldo(c.getSaldo() + monto);
+        c.depositar(monto);
+        c.addMovimiento(this);
         return true;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " | Motivo: " + motivo;
+        return "Depósito | " + super.toString() + " | Motivo: " + motivo;
     }
 }
-
