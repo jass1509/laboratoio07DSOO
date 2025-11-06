@@ -1,42 +1,74 @@
-import java.util.Date;
+import java.util.ArrayList;
 
-public class Titularidad {
+public class Cuenta {
 
-    private Date fechaInicio;
-    private boolean esPrincipal;
-    private Cliente clienteAsociado;
-    private Cuenta cuentaAsociada;
+    private String numeroCuenta;
+    private double saldo;
+    private String tipoCuenta;
+    private ArrayList<Transaccion> movimientos;
+    private String estado; // Por ejemplo si es "Activa", "Congelada"
 
-    public Titularidad(Cliente clienteAsociado, Cuenta cuentaAsociada, Date fechaInicio, boolean esPrincipal) {
-        
-        // clienteAsociado y cuentaAsociada: enlazan las clases
-        this.clienteAsociado = clienteAsociado;
-        this.cuentaAsociada = cuentaAsociada;
-        this.fechaInicio = fechaInicio;
-        this.esPrincipal = esPrincipal;
-    }
-    
-    public Cliente getCliente() {
-        return clienteAsociado;
+    public Cuenta(String numeroCuenta, double saldo, String tipoCuenta) {
+        this.numeroCuenta = numeroCuenta;
+        this.saldo = saldo;
+        this.tipoCuenta = tipoCuenta;
+        this.estado = "Activa";
+        this.movimientos = new ArrayList<>();
     }
 
-    public Cuenta getCuenta() {
-        return cuentaAsociada;
+    public String getNumeroCuenta() {
+        return numeroCuenta;
     }
 
-    public Date getFechaInicio() {
-        return fechaInicio;
+    public double getSaldo() {
+        return saldo;
     }
-    // Indica si es el titular principal
-    public boolean isPrincipal() {
-        return esPrincipal;
+
+    public String getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    // Agrega una transacción a la lista de movimientos
+    public void addMovimiento(Transaccion t) {
+        movimientos.add(t);
+    }
+
+    // Devuelve los movimientos registrados
+    public ArrayList<Transaccion> consultarMovimientos() {
+        return movimientos;
+    }
+
+    // Congela la cuenta
+    public void congelarCuenta() {
+        estado = "Congelada";
+    }
+
+    // Deposita dinero en la cuenta
+    public void depositar(double monto) {
+        if (estado.equals("Activa") && monto > 0) {
+            saldo += monto;
+        }
+    }
+
+    // Retira dinero de la cuenta si hay saldo suficiente
+    public boolean retirar(double monto) {
+        if (estado.equals("Activa") && monto > 0 && saldo >= monto) {
+            saldo -= monto;
+            return true;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "Titularidad | Cliente: " + clienteAsociado.getNombreCompleto() +
-               " | Cuenta: " + cuentaAsociada.getNumeroCuenta() +
-               " | Principal: " + esPrincipal +
-               " | Fecha inicio: " + fechaInicio;
+        return "Cuenta Nº: " + numeroCuenta +
+               " | Tipo: " + tipoCuenta +
+               " | Saldo: " + saldo +
+               " | Estado: " + estado +
+               " | Movimientos: " + movimientos.size();
     }
 }
