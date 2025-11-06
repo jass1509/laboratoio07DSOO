@@ -1,47 +1,37 @@
-import java.util.*;
+import java.util.Date;
 
 public abstract class Transaccion {
 
-    // Atributos de la transacción
+    protected String idTransaccion;
     protected double monto;
     protected Date fecha;
-    protected String hora;
-    protected String tipo;
-    protected String idTransaccion;
-    protected Cuenta cuentaAsociada;
+    protected Empleado empleadoGestor;
+    protected Cuenta cuentaRegistra;
 
-    // Constructor
-    public Transaccion(double monto, Date fecha, String hora, String tipo, String idTransaccion, Cuenta cuentaAsociada) {
+    public Transaccion(String idTransaccion, double monto, Date fecha, Empleado empleadoGestor, Cuenta cuentaRegistra) {
+        this.idTransaccion = idTransaccion;
         this.monto = monto;
         this.fecha = fecha;
-        this.hora = hora;
-        this.tipo = tipo;
-        this.idTransaccion = idTransaccion;
-        this.cuentaAsociada = cuentaAsociada;
+        this.empleadoGestor = empleadoGestor;
+        this.cuentaRegistra = cuentaRegistra;
     }
 
-    // Getter del monto
+    // Retorna el monto
     public double getMonto() {
         return monto;
     }
 
-    // Devuelve fecha (si luego deseas mezclar hora, se puede formatear)
-    public Date getFechaHora() {
-        return fecha;
-    }
-
-    // Método polimórfico. Cada transacción implementa su propia lógica.
+    // Método polimórfico que se redefine en subclases
     public abstract boolean procesar(Cuenta c);
 
-    // toString para detallar la transacción
+    // Representación en texto de la transacción
     @Override
     public String toString() {
-        String numCuenta = (cuentaAsociada != null) ? cuentaAsociada.getNumeroCuenta() : "Sin cuenta";
-        return "Transacción: " + tipo +
-               " | ID: " + idTransaccion +
+        return "ID: " + idTransaccion +
                " | Monto: " + monto +
                " | Fecha: " + fecha +
-               " | Hora: " + hora +
-               " | Cuenta Asociada: " + numCuenta;
+               " | Gestor: " + (empleadoGestor != null ? empleadoGestor.getNombre() : "No asignado") +
+               " | Cuenta: " + (cuentaRegistra != null ? cuentaRegistra.getNumeroCuenta() : "Sin cuenta");
     }
 }
+
