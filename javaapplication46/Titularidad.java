@@ -17,6 +17,8 @@ public class Titularidad {
         this.esPrincipal = esPrincipal;
     }
 
+    
+    //Getters y setters
     public Cliente getCliente() {
         return clienteAsociado;
     }
