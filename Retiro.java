@@ -2,32 +2,29 @@ import java.util.Date;
 
 public class Retiro extends Transaccion {
 
-    private String motivo;
+    private boolean limiteSuperado;
 
-    // Constructor
-    public Retiro(double monto, Date fecha, String hora, String idTransaccion, Cuenta cuentaAsociada, String motivo) {
-        super(monto, fecha, hora, "Retiro", idTransaccion, cuentaAsociada);
-        this.motivo = motivo;
+    public Retiro(String idTransaccion, double monto, Date fecha, Empleado empleadoGestor, Cuenta cuentaRegistra) {
+        super(idTransaccion, monto, fecha, empleadoGestor, cuentaRegistra);
+        this.limiteSuperado = false;
     }
 
-    // Procesa el retiro (resta saldo si hay suficiente)
+    // Procesa el retiro (solo si saldo suficiente)
     @Override
     public boolean procesar(Cuenta c) {
-        if (c == null) {
-            return false;
-        }
+        if (c == null) return false;
 
-        // Validación de saldo suficiente
         if (c.getSaldo() >= monto) {
             c.setSaldo(c.getSaldo() - monto);
-            return true; // retiro exitoso
+            return true;
         } else {
-            return false; // saldo insuficiente
+            limiteSuperado = true;
+            return false;
         }
     }
 
     @Override
     public String toString() {
-        return super.toString() + " | Motivo: " + motivo;
+        return super.toString() + " | Exceso de retiro: " + (limiteSuperado ? "Sí" : "No");
     }
 }
