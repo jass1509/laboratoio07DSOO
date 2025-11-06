@@ -16,21 +16,21 @@ public abstract class Transaccion {
         this.cuentaRegistra = cuentaRegistra;
     }
 
-    // Retorna el monto
+    // Retorna el monto //
     public double getMonto() {
         return monto;
     }
 
-    // Método polimórfico que se redefine en subclases
+    // Se implementa en las subclases //
     public abstract boolean procesar(Cuenta c);
 
-    // Representación en texto de la transacción
     @Override
     public String toString() {
         return "ID: " + idTransaccion +
-               " | Monto: " + monto +
-               " | Fecha: " + fecha +
-               " | Gestor: " + (empleadoGestor != null ? empleadoGestor.getNombre() : "No asignado") +
-               " | Cuenta: " + (cuentaRegistra != null ? cuentaRegistra.getNumeroCuenta() : "Sin cuenta");
+                " | Monto: " + monto +
+                " | Fecha: " + fecha +
+                " | Gestor: " + (empleadoGestor != null ? empleadoGestor.getNombreCompleto() : "N/A") +
+                " | Cuenta: " + (cuentaRegistra != null ? cuentaRegistra.getNumeroCuenta() : "N/A");
     }
 }
+
