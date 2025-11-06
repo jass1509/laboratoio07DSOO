@@ -10,6 +10,7 @@ public class Persona {
     protected String email;
     protected Date fechaNacimiento;
 
+    //Constructor
     public Persona(String nombre, String apellido, String telefono, String email, Date fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
