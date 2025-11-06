@@ -3,6 +3,7 @@ import java.util.Date;
 
 public class Retiro extends Transaccion {
 
+	//Atributos con restricciones de saldo ingresado
     private boolean limiteSuperado;
     private double limite = 1000; // Límite simple permitido
 
@@ -12,6 +13,8 @@ public class Retiro extends Transaccion {
         this.limiteSuperado = false;
     }
 
+    
+    //Polimorfismo
     // Intenta retirar el monto si no supera el límite y hay saldo
     @Override
     public boolean procesar(Cuenta c) {
