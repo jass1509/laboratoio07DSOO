@@ -16,12 +16,11 @@ public abstract class Transaccion {
         this.cuentaRegistra = cuentaRegistra;
     }
 
-    // Retorna el monto //
     public double getMonto() {
         return monto;
     }
 
-    // Se implementa en las subclases //
+    // Se implementa según el tipo (Depósito / Retiro)
     public abstract boolean procesar(Cuenta c);
 
     @Override
@@ -33,4 +32,3 @@ public abstract class Transaccion {
                 " | Cuenta: " + (cuentaRegistra != null ? cuentaRegistra.getNumeroCuenta() : "N/A");
     }
 }
-
