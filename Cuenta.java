@@ -1,16 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Clase Cuenta bancaria
 public class Cuenta {
 
     private String numeroCuenta;
     private double saldo;
-    private String tipoCuenta;      // Ejemplo: "Ahorros", "Corriente"
+    private String tipoCuenta; // Por ejemplo puede ser de "Ahorros", "Corriente"
     private List<Transaccion> movimientos;
-    private String estado;          // Ejemplo: "Activa", "Congelada"
+    private String estado; // Por ejemplo puede ser "Activa", "Congelada"
 
-    // Constructor
     public Cuenta(String numeroCuenta, double saldoInicial, String tipoCuenta) {
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldoInicial;
