@@ -3,11 +3,15 @@ import java.util.Date;
 
 public class Empleado extends Persona {
 
+	
+	//Atributos subclase Empleado
     private String codigoEmpleado;
     private Date fechaContratacion;
     private double salario;
     private String departamento;
 
+    
+    //Contrstuctor
     public Empleado(String nombre, String apellido, String telefono, String email, Date fechaNacimiento,
                     String codigoEmpleado, Date fechaContratacion, double salario, String departamento) {
 
