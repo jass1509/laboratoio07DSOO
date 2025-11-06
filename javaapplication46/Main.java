@@ -25,6 +25,8 @@ public class Main {
             System.out.print("Elija una opción: ");
             opcion =menu.leerEntero();
 
+            
+            // Opciones de selección 
            switch (opcion) {
                 case 1:
                     menu.verEmpleados();
