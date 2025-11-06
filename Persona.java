@@ -27,7 +27,7 @@ public class Persona {
         this.email = email;
     }
 
-    // Calcula edad aproximada (sin usar Calendar)
+    // Calcula edad aproximada
     public int calcularEdad() {
         Date hoy = new Date();
         int años = hoy.getYear() - fechaNacimiento.getYear();
@@ -39,5 +39,26 @@ public class Persona {
         }
 
         return años;
+    }
+
+    // Getters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 }
