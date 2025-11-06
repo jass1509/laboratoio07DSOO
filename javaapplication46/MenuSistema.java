@@ -1,7 +1,10 @@
 package javaapplication46;
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.Scanner;
+
+import PaqueteClases.Sistema;
 
 public class MenuSistema {
 
@@ -10,7 +13,9 @@ public class MenuSistema {
     private Empleado empleadoActivo;
 
     public MenuSistema() {
-        // Inicialización de ejemplo
+        //Creando objeto sistema
+    		this.sistema = new Sistema("BANCO BCP", "CV2");
+    		// Inicialización de ejemplo
         Empleado emp1 = new Empleado("Carlos", "Pérez", "912067512", "carlosP@gmail.com",
                 new Date(90, 5, 12), "E001", new Date(), 2500, "Cajas");
         sistema.registrarPersona(emp1);
