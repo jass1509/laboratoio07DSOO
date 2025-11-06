@@ -1,6 +1,5 @@
 import java.util.Date;
 
-// Transacción de tipo Retiro
 public class Retiro extends Transaccion {
 
     private boolean limiteSuperado;
