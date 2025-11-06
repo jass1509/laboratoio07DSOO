@@ -1,13 +1,34 @@
-package javaapplication46;
-public class Empleado extends Persona {
-    private String idEmpleado;
-    private String cargo;
+import java.util.Date;
 
-    public void procesarTransaccion(Transaccion t) {
-        t.procesar();
+public class Empleado extends Persona {
+
+    private String codigoEmpleado;
+    private Date fechaContratacion;
+    private double salario;
+    private String departamento;
+
+    public Empleado(String nombre, String apellido, String telefono, String email, Date fechaNacimiento,
+                    String codigoEmpleado, Date fechaContratacion, double salario, String departamento) {
+
+        super(nombre, apellido, telefono, email, fechaNacimiento);
+        this.codigoEmpleado = codigoEmpleado;
+        this.fechaContratacion = fechaContratacion;
+        this.salario = salario;
+        this.departamento = departamento;
     }
 
-    public void registrarCliente(Cliente c) {
-        // lógica para registrar cliente
+    // Autoriza transacción (por ahora siempre true) //
+    public boolean autorizarTransaccion(Transaccion t) {
+        return true;
+    }
+
+    // Retorna info básica de auditoría //
+    public String auditarCuenta(Cuenta c) {
+        return "Cuenta: " + c.getNumeroCuenta() + " | Saldo: " + c.getSaldo();
+    }
+
+    // Retorna código //
+    public String getCodigoEmpleado() {
+        return codigoEmpleado;
     }
 }
