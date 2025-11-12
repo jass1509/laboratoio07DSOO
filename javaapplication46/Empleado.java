@@ -1,3 +1,4 @@
+
 import java.time.LocalDate; // Importación necesaria
 
 public class Empleado extends Persona {

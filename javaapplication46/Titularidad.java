@@ -1,3 +1,4 @@
+
 import java.time.LocalDate; // Clase moderna para manejar solo la fecha
 
 public class Titularidad {

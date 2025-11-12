@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +6,7 @@ public class Main {
         // Crear el menú principal del sistema
         MenuSistema menu = new MenuSistema();
         Scanner sc = new Scanner(System.in);
-        Sistema sistema = new Sistema("Banco Pichincha", "SYS001");
+        Sistema sistema = new Sistema("Banco Chistemas", "SYS001");
         
        //Iterador opcional hasta que se ingrese 0
         int opcion;

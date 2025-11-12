@@ -1,3 +1,4 @@
+
 import java.time.LocalDateTime; // Clase moderna para fecha y hora
 
 public abstract class Transaccion {
