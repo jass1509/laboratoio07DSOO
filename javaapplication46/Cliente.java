@@ -13,7 +13,7 @@ public class Cliente extends Persona {
     
     //Constructor cliente actualizado (añadir PIN)
     public Cliente(String nombre, String apellido, String telefono, String email,
-                    LocalDate fechaNacimiento, String idCliente, String pin) { // CAMBIO AQUÍ: PIN
+                    LocalDate fechaNacimiento, String idCliente, String pin) { // se añade PIN en el constructor
         super(nombre, apellido, telefono, email, fechaNacimiento);
         this.idCliente = idCliente;
         this.pin = pin; // PIN
