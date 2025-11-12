@@ -1,15 +1,16 @@
-package javaapplication46;
-import java.util.Date;
+import java.time.LocalDateTime; // Clase moderna para fecha y hora
 
 public abstract class Transaccion {
     protected String codigo;
     protected double monto;
-    protected Date fecha;
+    // Atributo actualizado: Usando LocalDateTime en lugar de java.util.Date
+    protected LocalDateTime fecha; 
     protected Empleado empleadoRegistra;
     protected Cuenta cuentaRegistra;
     protected String motivo;
 
-    public Transaccion(String codigo, double monto, Date fecha, Empleado empleadoRegistra, Cuenta cuentaRegistra, String motivo) {
+    // Constructor actualizado: La fecha es ahora LocalDateTime
+    public Transaccion(String codigo, double monto, LocalDateTime fecha, Empleado empleadoRegistra, Cuenta cuentaRegistra, String motivo) {
         this.codigo = codigo;
         this.monto = monto;
         this.fecha = fecha;
@@ -28,7 +29,8 @@ public abstract class Transaccion {
         return monto;
     }
 
-    public Date getFecha() {
+    // Getter actualizado: Retorna LocalDateTime
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
@@ -49,7 +51,7 @@ public abstract class Transaccion {
         return "Transacción{" +
                 "Código='" + codigo + '\'' +
                 ", Monto=" + monto +
-                ", Fecha=" + fecha +
+                ", Fecha=" + fecha + // LocalDateTime tiene un buen formato por defecto
                 ", Empleado='" + empleadoRegistra.getNombreCompleto() + '\'' +
                 ", Cuenta=" + cuentaRegistra.getNumeroCuenta() +
                 ", Motivo='" + motivo + '\'' +
