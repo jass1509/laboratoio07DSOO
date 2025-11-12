@@ -1,5 +1,5 @@
-package javaapplication46;
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.ArrayList; // ⬅️ CAMBIO: Importamos LocalDate
 
 public class Sistema {
 
@@ -47,7 +47,10 @@ public class Sistema {
         
         String numeroCuenta = "C" + (contadorCuentas++);
         Cuenta nuevaCuenta = new Cuenta(numeroCuenta, saldoInicial, tipo);
-        Titularidad t = new Titularidad(c, nuevaCuenta, new java.util.Date(), true);
+        
+        // Usamos LocalDate.now() en lugar de new java.util.Date()
+        Titularidad t = new Titularidad(c, nuevaCuenta, LocalDate.now(), true); 
+        
         c.agregarTitularidad(t);
         return nuevaCuenta;
     }
