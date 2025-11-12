@@ -1,19 +1,17 @@
-package javaapplication46;
-import java.util.ArrayList;
-
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList; // Importación necesaria
 
 public class Cliente extends Persona {
-	
-	
-	//Atributos subclase cliente
+    
+    
+    //Atributos subclase cliente
     private String idCliente;
     private ArrayList<Titularidad> titularidades;
 
     
-    //Constructor cliente
+    //Constructor cliente actualizado (usa LocalDate)
     public Cliente(String nombre, String apellido, String telefono, String email,
-                   Date fechaNacimiento, String idCliente) {
+                    LocalDate fechaNacimiento, String idCliente) { // CAMBIO AQUÍ: LocalDate
         super(nombre, apellido, telefono, email, fechaNacimiento);
         this.idCliente = idCliente;
         this.titularidades = new ArrayList<>();
