@@ -24,10 +24,10 @@ public class Cliente extends Persona {
     public String getIdCliente() {
         return idCliente;
     }
+
     public String getPin() {
         return pin;
     }
-
 
     //Añadiendo titularidades en lista
     public void agregarTitularidad(Titularidad t) {

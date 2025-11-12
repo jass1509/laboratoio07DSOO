@@ -199,4 +199,9 @@ public class GestorValidaciones {
             }
         }
     }
+
+    public static double verificarDouble(Scanner sc, String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'verificarDouble'");
+    }
 }

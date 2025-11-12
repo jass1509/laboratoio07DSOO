@@ -38,13 +38,13 @@ public class MenuSistema {
         sistema.registrarPersona(empleadoATM); // Se registra, aunque no sea un empleado humano
 
         // Cliente 1
-        Cliente cli1 = new Cliente("Ana", "Zapana", "956564871", "anaZ@gmail.com",LocalDate.of(1995, 4, 25),"C001");
+        Cliente cli1 = new Cliente("Ana", "Zapana", "956564871", "anaZ@gmail.com",LocalDate.of(1995, 4, 25),"C001", null);
         sistema.registrarPersona(cli1);
         sistema.crearCuenta(cli1, "Ahorros", 1000);
 
         // Cliente 2
         Cliente cli2 = new Cliente("Julio", "Mamani", "944575848", "julioM@gmail.com",
-                LocalDate.of(1992, 8, 17), "B034");
+                LocalDate.of(1992, 8, 17), "B034", null);
         sistema.registrarPersona(cli2);
         sistema.crearCuenta(cli2, "Corriente", 2000);
         
@@ -126,7 +126,7 @@ public class MenuSistema {
         int dia = GestorValidaciones.validarDia(sc, "Día (1-31): ");
 
         // Se crea el objeto LocalDate con los datos validados
-        Cliente nuevo = new Cliente(nombre, apellido, telefono, email, LocalDate.of(anio, mes, dia), id);
+        Cliente nuevo = new Cliente(nombre, apellido, telefono, email, LocalDate.of(anio, mes, dia), id, id);
         
         sistema.registrarPersona(nuevo);
         System.out.println("Cliente agregado correctamente.");
