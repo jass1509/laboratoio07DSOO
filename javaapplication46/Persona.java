@@ -1,17 +1,17 @@
-package javaapplication46;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period; // Necesario para calcular la diferencia de tiempo
 
 public class Persona {
 
-	//Atributos superclase persona
+    // Atributos superclase persona
     protected String nombre;
     protected String apellido;
     protected String telefono;
     protected String email;
-    protected Date fechaNacimiento;
+    // Atributo actualizado: Usando LocalDate en lugar de java.util.Date
+    protected LocalDate fechaNacimiento; 
 
-    //Constructor
-    public Persona(String nombre, String apellido, String telefono, String email, Date fechaNacimiento) {
+    public Persona(String nombre, String apellido, String telefono, String email, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -30,18 +30,14 @@ public class Persona {
         this.email = email;
     }
 
-    // Calcula edad aproximada
+    // Calcula edad aproximada usando la nueva API java.time
     public int calcularEdad() {
-        Date hoy = new Date();
-        int años = hoy.getYear() - fechaNacimiento.getYear();
-
-        // Ajuste si aún no cumplió años este año
-        if (hoy.getMonth() < fechaNacimiento.getMonth()
-                || (hoy.getMonth() == fechaNacimiento.getMonth() && hoy.getDate() < fechaNacimiento.getDate())) {
-            años--;
-        }
-
-        return años;
+        // LocalDate.now() obtiene la fecha actual
+        LocalDate hoy = LocalDate.now(); 
+        
+        // Period.between() calcula la diferencia entre dos LocalDates en años, meses y días
+        // Luego usamos getYears() para obtener solo la parte de los años.
+        return Period.between(fechaNacimiento, hoy).getYears();
     }
 
     // Getters
@@ -61,7 +57,8 @@ public class Persona {
         return email;
     }
 
-    public Date getFechaNacimiento() {
+    // Getter actualizado para devolver LocalDate
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 }
