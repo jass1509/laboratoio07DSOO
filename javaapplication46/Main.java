@@ -57,9 +57,6 @@ public class Main {
                 case 10:
                     System.out.println("Saliendo del sistema...");
                     break;
-                default:
-                    System.out.println("Opción inválida.");
-                    break;
             }
 
         } while (opcion != 10);
