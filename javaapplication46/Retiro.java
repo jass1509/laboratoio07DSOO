@@ -1,15 +1,16 @@
-package javaapplication46;
-import java.util.Date;
+import java.time.LocalDateTime; // Clase moderna para la fecha y hora de la transacción
 
 public class Retiro extends Transaccion {
 
-	//Atributos con restricciones de saldo ingresado
+    //Atributos con restricciones de saldo ingresado
     private boolean limiteSuperado;
     private double limite = 1000; // Límite simple permitido
 
-    public Retiro(String idTransaccion, double monto, Date fecha, Empleado empleadoGestor,
+    // Constructor actualizado: La fecha es ahora LocalDateTime
+    public Retiro(String idTransaccion, double monto, LocalDateTime fecha, Empleado empleadoGestor,
                   Cuenta cuentaRegistra, String motivo) {
-        super(idTransaccion, monto, fecha, empleadoGestor, cuentaRegistra, motivo);
+        // Llama al constructor de la superclase (Transaccion), que ahora acepta LocalDateTime
+        super(idTransaccion, monto, fecha, empleadoGestor, cuentaRegistra, motivo); 
         this.limiteSuperado = false;
     }
 
@@ -40,7 +41,7 @@ public class Retiro extends Transaccion {
     public String toString() {
         return "[RETIRO] Código: " + codigo +
                 " | Monto: " + monto +
-                " | Fecha: " + fecha +
+                " | Fecha: " + fecha + // 'fecha' es ahora LocalDateTime
                 " | Cuenta: " + cuentaRegistra.getNumeroCuenta() +
                 " | Motivo: " + motivo +
                 " | Límite superado: " + limiteSuperado;
