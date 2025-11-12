@@ -19,11 +19,7 @@ public class MenuSistema {
             this.sistema = new Sistema("BANCO BCP", "CV2");
         this.sc = new Scanner(System.in);
             
-        // -----------------------------------------------------------------------------------
-        // CAMBIO: USANDO LocalDate EN LUGAR DE new Date(...) para inicializar datos
-        // -----------------------------------------------------------------------------------
-        
-        // Empleado 1: (..., LocalDate fechaNacimiento, ..., LocalDate fechaContratacion, double salario, ...)
+        // Empleado 1
         Empleado emp1 = new Empleado("Carlos", "Pérez", "912067512", "carlosP@gmail.com",
                 LocalDate.of(1990, 6, 12), "E001", LocalDate.now(), 2500.0, "Cajas"); 
         sistema.registrarPersona(emp1);
@@ -46,9 +42,6 @@ public class MenuSistema {
         sistema.registrarPersona(cli2);
         sistema.crearCuenta(cli2, "Corriente", 2000);
         
-        // -----------------------------------------------------------------------------------
-        // FIN DE CAMBIO
-        // -----------------------------------------------------------------------------------
     }
 
     
@@ -113,7 +106,6 @@ public class MenuSistema {
         System.out.print("ID cliente: ");
         String id = sc.nextLine();
 
-        // ⬅️ CAMBIOS INICIAN AQUÍ
         System.out.println("--- Ingrese Fecha de Nacimiento ---");
         // Uso de validación para la fecha de nacimiento (YYYY, MM, DD)
         int anio = GestorValidaciones.validarAnio(sc, "Año (YYYY): "); 
@@ -122,7 +114,6 @@ public class MenuSistema {
 
         // Se crea el objeto LocalDate con los datos validados
         Cliente nuevo = new Cliente(nombre, apellido, telefono, email, LocalDate.of(anio, mes, dia), id);
-        // ⬅️ CAMBIOS FINALIZAN AQUÍ
         
         sistema.registrarPersona(nuevo);
         System.out.println("Cliente agregado correctamente.");
