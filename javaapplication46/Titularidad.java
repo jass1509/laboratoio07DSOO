@@ -1,14 +1,15 @@
-package javaapplication46;
-import java.util.Date;
+import java.time.LocalDate; // Clase moderna para manejar solo la fecha
 
 public class Titularidad {
 
-    private Date fechaInicio;
+    // Atributo actualizado: Usando LocalDate en lugar de java.util.Date
+    private LocalDate fechaInicio; 
     private boolean esPrincipal;
     private Cliente clienteAsociado;
     private Cuenta cuentaAsociada;
 
-    public Titularidad(Cliente clienteAsociado, Cuenta cuentaAsociada, Date fechaInicio, boolean esPrincipal) {
+    // Constructor actualizado: La fecha de inicio es ahora LocalDate
+    public Titularidad(Cliente clienteAsociado, Cuenta cuentaAsociada, LocalDate fechaInicio, boolean esPrincipal) {
 
       // clienteAsociado y cuentaAsociada enlazan las clases
         this.clienteAsociado = clienteAsociado;
@@ -27,7 +28,8 @@ public class Titularidad {
         return cuentaAsociada;
     }
 
-    public Date getFechaInicio() {
+    // Getter actualizado: Retorna LocalDate
+    public LocalDate getFechaInicio() {
         return fechaInicio;
     }
     // Indica si es el titular principal
