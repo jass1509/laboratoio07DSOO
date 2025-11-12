@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 import PaqueteClases.Sistema;
+import javaapplication46.GestorValidaciones;
 
 public class MenuSistema {
 
@@ -61,11 +62,11 @@ public class MenuSistema {
         System.out.print("Teléfono: ");
         String telefono = sc.nextLine();
         System.out.print("Email: ");
-        String email = sc.nextLine();
+        String email = GestorValidaciones.verificarCorreo(sc.nextLine());
         System.out.print("Código empleado: ");
         String codigo = sc.nextLine();
         System.out.print("Salario: ");
-        double salario = leerDouble();
+        double salario = GestorValidaciones.validarMonto(sc);
         System.out.print("Departamento: ");
         String dep = sc.nextLine();
 
@@ -116,7 +117,7 @@ public class MenuSistema {
             System.out.print("Tipo de cuenta: ");
             String tipo = sc.nextLine();
             System.out.print("Saldo inicial: ");
-            double saldo = leerDouble();
+            double saldo = GestorValidaciones.validarMonto(sc);
             Cuenta nueva = sistema.crearCuenta(c, tipo, saldo);
             System.out.println("Cuenta creada correctamente. Número: " + nueva.getNumeroCuenta());
         } else {
@@ -156,7 +157,7 @@ public class MenuSistema {
             Cuenta cuenta = c.buscarCuenta(num);
             if (cuenta != null) {
                 System.out.print("Monto: ");
-                double monto = leerDouble();
+                double monto = GestorValidaciones.validarMonto(sc);
                 System.out.print("Motivo: ");
                 String motivo = sc.nextLine();
                 Transaccion dep = new Deposito("T" + System.currentTimeMillis(), monto,
@@ -183,7 +184,7 @@ public class MenuSistema {
             Cuenta cuenta = c.buscarCuenta(num);
             if (cuenta != null) {
                 System.out.print("Monto: ");
-                double monto = leerDouble();
+                double monto = GestorValidaciones.validarMonto(sc);
                 System.out.print("Motivo: ");
                 String motivo = sc.nextLine();
                 Transaccion ret = new Retiro("T" + System.currentTimeMillis(), monto,
@@ -226,16 +227,6 @@ public class MenuSistema {
                 return Integer.parseInt(sc.nextLine());
             } catch (NumberFormatException e) {
                 System.out.print("Ingrese un número válido: ");
-            }
-        }
-    }
-
-    public double leerDouble() {
-        while (true) {
-            try {
-                return Double.parseDouble(sc.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.print("Ingrese un valor numérico válido: ");
             }
         }
     }
