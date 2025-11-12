@@ -1,7 +1,3 @@
-package javaapplication46;
-
-import java.util.Date;
-
 import java.util.Scanner;
 
 public class Main {
@@ -26,7 +22,7 @@ public class Main {
             System.out.println("9. Ver movimientos");
             System.out.println("10. Salir");
             System.out.print("Elija una opción: ");
-            opcion =menu.leerEntero();
+            opcion = GestorValidaciones.leerOpcionMenu(sc, "Elija una opción: ");
 
             
             // Opciones de selección 
