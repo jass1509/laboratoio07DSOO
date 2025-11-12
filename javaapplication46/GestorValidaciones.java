@@ -188,8 +188,8 @@ public class GestorValidaciones {
             System.out.print(prompt);
             try {
                 int valor = Integer.parseInt(sc.nextLine());
-                // El menú acepta opciones entre 1 y 10
-                if (valor >= 1 && valor <= 10) { 
+                // El menú acepta opciones entre 1 y 11 por la nueva opcion del cajero automatico
+                if (valor >= 1 && valor <= 11) { 
                     return valor;
                 } else {
                     System.out.println("Error: El valor debe ser un número entre 1 y 10.");

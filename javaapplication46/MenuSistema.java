@@ -12,6 +12,7 @@ public class MenuSistema {
     private Sistema sistema;
     private Scanner sc;
     private Empleado empleadoActivo;
+    private Empleado empleadoATM;
 
     
     //Creacion de datos inicializados
@@ -31,9 +32,13 @@ public class MenuSistema {
                 LocalDate.of(1985, 8, 28), "E002", LocalDate.now(), 3500.0, "Administración"); 
         sistema.registrarPersona(emp2);
 
+        // nuevo empleado para transacciones de Cajero Automático (No humano) ---
+        this.empleadoATM = new Empleado("Sistema", "ATM", "N/A", "atm@sistema.com",
+                                        LocalDate.of(2023, 1, 1), "EATM", LocalDate.now(), 0.0, "AUTOMÁTICO");
+        sistema.registrarPersona(empleadoATM); // Se registra, aunque no sea un empleado humano
+
         // Cliente 1
-        Cliente cli1 = new Cliente("Ana", "Zapana", "956564871", "anaZ@gmail.com",
-                LocalDate.of(1995, 4, 25), "C001");
+        Cliente cli1 = new Cliente("Ana", "Zapana", "956564871", "anaZ@gmail.com",LocalDate.of(1995, 4, 25),"C001");
         sistema.registrarPersona(cli1);
         sistema.crearCuenta(cli1, "Ahorros", 1000);
 
@@ -43,6 +48,13 @@ public class MenuSistema {
         sistema.registrarPersona(cli2);
         sistema.crearCuenta(cli2, "Corriente", 2000);
         
+    }
+    public Sistema getSistema() {
+        return sistema;
+    }
+    
+    public Empleado getEmpleadoATM() {
+        return empleadoATM;
     }
 
     

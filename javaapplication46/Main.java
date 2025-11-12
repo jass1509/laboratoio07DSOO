@@ -7,6 +7,7 @@ public class Main {
         MenuSistema menu = new MenuSistema();
         Scanner sc = new Scanner(System.in);
         Sistema sistema = new Sistema("Banco Chistemas", "SYS001");
+        CajeroAutomatico cajero = new CajeroAutomatico(menu.getSistema(), menu.getEmpleadoATM(), sc);
         
        //Iterador opcional hasta que se ingrese 0
         int opcion;
@@ -21,7 +22,8 @@ public class Main {
             System.out.println("7. Hacer depósito");
             System.out.println("8. Hacer retiro");
             System.out.println("9. Ver movimientos");
-            System.out.println("10. Salir");
+            System.out.println("10.Iniciar Sesión en Cajero Automático");
+            System.out.println("11. Salir");
             System.out.print("Elija una opción: ");
             opcion = GestorValidaciones.leerOpcionMenu(sc, "Elija una opción: ");
 
@@ -56,10 +58,13 @@ public class Main {
                     menu.verMovimientos();
                     break;
                 case 10:
+                    cajero.iniciarCajero(); 
+                    break;
+                case 11:
                     System.out.println("Saliendo del sistema...");
                     break;
             }
 
-        } while (opcion != 10);
+        } while (opcion != 11);
     }
 }
