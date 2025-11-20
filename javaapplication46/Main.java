@@ -23,7 +23,7 @@ public class Main {
             System.out.println("8. Hacer retiro");
             System.out.println("9. Ver movimientos");
             System.out.println("10.Iniciar Sesión en Cajero Automático");
-            System.out.println("10. Salir");
+            System.out.println("11. Salir");
             System.out.print("Elija una opción: ");
             opcion = GestorValidaciones.leerOpcionMenu(sc, "Elija una opción: ");
 
