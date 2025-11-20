@@ -2,7 +2,9 @@
 import java.util.ArrayList;
 
 public class Cuenta {
-
+	
+	
+	//Atributos basicos de clase cuenta 
     private String numeroCuenta;
     private double saldo;
     private String tipoCuenta;
