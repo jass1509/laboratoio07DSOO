@@ -48,7 +48,7 @@ public class MenuSistema {
         sistema.crearCuenta(cli2, "Corriente", 2000);
 
         // Cliente 3 inicializado
-        Cliente cli1 = new Cliente("Javier", "Valdez", "956563371", "jvalde@gmail.com",LocalDate.of(2000, 5, 21),"C002", "1235");
+        Cliente cli3 = new Cliente("Javier", "Valdez", "956563371", "jvalde@gmail.com",LocalDate.of(2000, 5, 21),"C002", "1235");
         sistema.registrarPersona(cli3);
         sistema.crearCuenta(cli3, "Ahorros", 1500);
         
