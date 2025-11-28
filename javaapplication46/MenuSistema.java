@@ -37,15 +37,20 @@ public class MenuSistema {
                                         LocalDate.of(2023, 1, 1), "EATM", LocalDate.now(), 0.0, "AUTOMÁTICO");
         sistema.registrarPersona(empleadoATM); // Se registra, aunque no sea un empleado humano
 
-        // Cliente 1
+        // Cliente 1 inicializado
         Cliente cli1 = new Cliente("Ana", "Zapana", "956564871", "anaZ@gmail.com",LocalDate.of(1995, 4, 25),"C001", "1234");
         sistema.registrarPersona(cli1);
         sistema.crearCuenta(cli1, "Ahorros", 1000);
 
-        // Cliente 2
+        // Cliente 2 inicializado
         Cliente cli2 = new Cliente("Julio", "Mamani", "944575848", "julioM@gmail.com",LocalDate.of(1992, 8, 17), "B034", "5678");
         sistema.registrarPersona(cli2);
         sistema.crearCuenta(cli2, "Corriente", 2000);
+
+        // Cliente 3 inicializado
+        Cliente cli1 = new Cliente("Javier", "Valdez", "956563371", "jvalde@gmail.com",LocalDate.of(2000, 5, 21),"C002", "1235");
+        sistema.registrarPersona(cli3);
+        sistema.crearCuenta(cli3, "Ahorros", 1500);
         
     }
     public Sistema getSistema() {
