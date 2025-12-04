@@ -69,7 +69,7 @@ public class VentanaCajeroAutomatico extends JDialog {
         gbc.gridx = 0; gbc.gridy = 2; gbc.gridwidth = 2;
         btnAutenticar = new JButton("Iniciar Sesión");
         btnAutenticar.setBackground(new Color(46, 204, 113));
-        btnAutenticar.setForeground(Color.WHITE);
+        btnAutenticar.setForeground(Color.BLACK);
         btnAutenticar.setFocusPainted(false);
         btnAutenticar.setPreferredSize(new Dimension(200, 35));
         btnAutenticar.addActionListener(e -> autenticar());
@@ -152,7 +152,7 @@ public class VentanaCajeroAutomatico extends JDialog {
     private JButton crearBotonOperacion(String texto, Color color) {
         JButton btn = new JButton(texto);
         btn.setBackground(color);
-        btn.setForeground(Color.WHITE);
+        btn.setForeground(new Color(60, 60, 60));
         btn.setFont(new Font("Arial", Font.BOLD, 14));
         btn.setFocusPainted(false);
         btn.setPreferredSize(new Dimension(150, 50));
