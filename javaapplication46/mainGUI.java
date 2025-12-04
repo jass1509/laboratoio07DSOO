@@ -7,22 +7,22 @@ import java.time.LocalDate;
  * Esta clase inicializa el sistema con datos de prueba y lanza la ventana principal.
  */
 public class mainGUI {
-    
-    public static void main(String[] args) {
+        
+        public static void main(String[] args) {
         // Configurar Look and Feel del sistema operativo
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-            e.printStackTrace();
+                e.printStackTrace();
         }
         
         // Ejecutar en el Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
-            inicializarSistema();
+                inicializarSistema();
         });
-    }
-    
-    private static void inicializarSistema() {
+        }
+
+        private static void inicializarSistema() {
         // Crear sistema
         Sistema sistema = new Sistema("BANCO", "CV2");
         
@@ -90,12 +90,12 @@ public class mainGUI {
         // ===== INICIAR VENTANA PRINCIPAL =====
         VentanaPrincipal ventana = new VentanaPrincipal(sistema, emp1, empleadoATM);
         ventana.setVisible(true);
-    }
-    
-    /**
+        }
+        
+        /**
      * Muestra una pantalla de bienvenida antes de cargar el sistema completo
      */
-    private static void mostrarSplashScreen() {
+        private static void mostrarSplashScreen() {
         JWindow splash = new JWindow();
         
         JPanel panel = new JPanel();
@@ -136,11 +136,11 @@ public class mainGUI {
         
         // Simular carga
         try {
-            Thread.sleep(2000);
+                Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+                e.printStackTrace();
         }
         
         splash.dispose();
-    }
+        }
 }
