@@ -1,22 +1,17 @@
-
 import java.time.LocalDate;
-import java.util.Scanner; // ⬅️ Nuevo: Necesario para validar días en el mes
+import java.util.Scanner;
 
 public class GestorValidaciones {
 
     // Constante para la edad mínima de apertura de cuenta
     private static final int EDAD_MINIMA_CUENTA = 18;
 
-    /* Valida que una cadena contenga solo letras y espacios.
-    Usa el parámetro sc Scanner para re-leer la entrada.
-    Retorna los mensajes al usuario, si ingreso los datos correctamente o no.
-    Retorna la cadena validada (solo letras). */
+    /* Valida que una cadena contenga solo letras y espacios. */
     public static String verificarLetras(Scanner sc, String prompt) {
         String input;
         while (true) {
             System.out.print(prompt);
             input = sc.nextLine().trim();
-            // Utiliza una expresión regular para aceptar letras (mayúsculas/minúsculas) y espacios.
             if (input != null && input.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$") && !input.isEmpty()) {
                 return input;
             } else {
@@ -25,16 +20,12 @@ public class GestorValidaciones {
         }
     }
 
-    /* Valida que la entrada sea un número de teléfono de 9 dígitos.
-    Usa el parámetro sc Scanner para re-leer la entrada.
-    Retorna los mensajes al usuario, si ingreso los datos correctamente o no.
-    Retorna el número de teléfono validado. */
+    /* Valida que la entrada sea un número de teléfono de 9 dígitos. */
     public static String verificarNumeros(Scanner sc, String prompt) {
         String numero;
         while (true) {
             System.out.print(prompt);
             numero = sc.nextLine().trim();
-            // Utiliza una expresión regular para aceptar exactamente 9 dígitos.
             if (numero != null && numero.matches("^\\d{9}$")) {
                 return numero;
             } else {
@@ -43,16 +34,12 @@ public class GestorValidaciones {
         }
     }
     
-    /* Valida el formato de un correo electrónico.
-    Usa el parametro sc Scanner para re-leer la entrada.
-    Retorna los mensajes al usuario, si ingreso los datos correctamente o no.
-    Retorna el correo validado. */
+    /* Valida el formato de un correo electrónico. */
     public static String verificarCorreo(Scanner sc, String prompt) {
         String correo;
         while (true) {
             System.out.print(prompt);
             correo = sc.nextLine().trim();
-            // Expresión regular para un formato de correo simple.
             if (correo != null && correo.matches("^[\\w.-]+@[\\w.-]+\\.\\w{2,}$")) {
                 return correo;
             } else {
@@ -61,10 +48,7 @@ public class GestorValidaciones {
         }
     }
 
-    /* Valida que la entrada sea un número (monto) positivo.
-    Este método ya existía y lo mantendremos como base.
-    Usa el parámetro sc Scanner.
-    Retorna el monto validado. */
+    /* Valida que la entrada sea un número (monto) positivo. */
     public static double validarMonto(Scanner sc) {
         while (true) {
             try {
@@ -80,10 +64,7 @@ public class GestorValidaciones {
         }
     }
     
-    /* Valida el saldo inicial, asegurando que sea un valor positivo.
-    Es idéntico a validarMonto, pero con un nombre más específico para el contexto.
-    Usa el parámetro sc Scanner.
-    Retorna el saldo inicial validado (> 0). */
+    /* Valida el saldo inicial, asegurando que sea un valor positivo. */
     public static double validarSaldoInicial(Scanner sc) {
           System.out.print("Saldo inicial (mínimo S/0.01): ");
           while (true) {
@@ -100,8 +81,7 @@ public class GestorValidaciones {
         }
     }
 
-    /* Valida que la entrada sea un número entero y positivo.
-    * Retorna el entero validado. */
+    /* Valida que la entrada sea un número entero y positivo. */
     private static int validarEntero(Scanner sc, String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -151,7 +131,6 @@ public class GestorValidaciones {
         while (true) {
             dia = validarEntero(sc, prompt);
             if (dia >= 1 && dia <= 31) {
-                // Validación simple para meses con menos de 31 días (no verifica bisiestos)
                 if ((dia == 31) && (prompt.toLowerCase().contains("abril") || prompt.toLowerCase().contains("junio") || 
                                    prompt.toLowerCase().contains("septiembre") || prompt.toLowerCase().contains("noviembre"))) {
                     System.out.println("Error: Este mes no tiene 31 días. Vuelva a ingresar.");
@@ -166,14 +145,9 @@ public class GestorValidaciones {
         }
     }
     
-    /* Valida si el cliente es mayor de edad (18 años) para la apertura de cuenta.
-    Esta validación se realiza en la clase GestorValidaciones como requerido.
-    Además, incluye los mensajes de error correspondientes para mantener
-    Usa el parametro sc Scanner (para mantener consistencia estructural).
-    Usa el parametropersona El objeto Persona (o Cliente) cuya edad se va a validar.
-    Retorna true si cumple con la edad mínima (18), false en caso contrario. */
+    /* Valida si el cliente es mayor de edad (18 años) para la apertura de cuenta. */
     public static boolean validarEdadParaCuenta(Scanner sc, Persona persona) {
-        int edad = persona.calcularEdad(); // Llama al método de la clase Persona
+        int edad = persona.calcularEdad();
         if (edad < EDAD_MINIMA_CUENTA) {
             System.out.println("\n ERROR: El cliente debe tener al menos " + EDAD_MINIMA_CUENTA + " años para abrir una cuenta.");
             System.out.println("Edad actual del cliente: " + edad + " años.");
@@ -182,17 +156,16 @@ public class GestorValidaciones {
         return true;
     }
     
-    // Nuevo método en GestorValidaciones
+    /* Lee una opción del menú principal (1-11). */
     public static int leerOpcionMenu(Scanner sc, String prompt) {
         while (true) {
             System.out.print(prompt);
             try {
                 int valor = Integer.parseInt(sc.nextLine());
-                // El menú acepta opciones entre 1 y 11 por la nueva opcion del cajero automatico
                 if (valor >= 1 && valor <= 11) { 
                     return valor;
                 } else {
-                    System.out.println("Error: El valor debe ser un número entre 1 y 10.");
+                    System.out.println("Error: El valor debe ser un número entre 1 y 11.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error: Ingrese un valor numérico entero válido.");
@@ -200,8 +173,20 @@ public class GestorValidaciones {
         }
     }
 
-    public static double verificarDouble(Scanner sc, String string) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'verificarDouble'");
+    /* MÉTODO CORREGIDO: Valida que la entrada sea un número double válido y positivo. */
+    public static double verificarDouble(Scanner sc, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            try {
+                double valor = Double.parseDouble(sc.nextLine());
+                if (valor > 0) {
+                    return valor;
+                } else {
+                    System.out.println("Error: El valor debe ser un número positivo. Vuelva a ingresar.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Ingrese un valor numérico válido. Vuelva a ingresar.");
+            }
+        }
     }
 }

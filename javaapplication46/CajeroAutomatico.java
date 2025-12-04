@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class CajeroAutomatico {
     private Sistema sistema;
     private Scanner sc;
-    private Empleado empleadoATM; // El 'Empleado' que registrará las transacciones del cajero.
+    private Empleado empleadoATM; // El empleado que registrará las transacciones del cajero.
 
-    // El Cajero necesita una referencia al Sistema, el Scanner y el Empleado especial.
+    // El Cajero necesita una referencia al Sistema, el Scanner y el empleado especial.
     public CajeroAutomatico(Sistema sistema, Empleado empleadoATM, Scanner sc) {
         this.sistema = sistema;
         this.empleadoATM = empleadoATM;
