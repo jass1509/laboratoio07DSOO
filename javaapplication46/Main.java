@@ -29,7 +29,7 @@ public class Main {
 
             
             // Opciones de selección 
-           switch (opcion) {
+            switch (opcion) {
                 case 1:
                     menu.verEmpleados();
                     break;
