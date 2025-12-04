@@ -59,7 +59,7 @@ public class VentanaMovimientos extends JDialog {
         gbc.gridx = 2; gbc.weightx = 0;
         btnBuscar = new JButton("Buscar");
         btnBuscar.setBackground(new Color(155, 89, 182));
-        btnBuscar.setForeground(Color.WHITE);
+        btnBuscar.setForeground(Color.BLACK);
         btnBuscar.setFocusPainted(false);
         btnBuscar.addActionListener(e -> buscarCliente());
         panelBusqueda.add(btnBuscar, gbc);
@@ -128,7 +128,7 @@ public class VentanaMovimientos extends JDialog {
         btnCerrar = new JButton("Cerrar");
         btnCerrar.setPreferredSize(new Dimension(150, 35));
         btnCerrar.setBackground(new Color(149, 165, 166));
-        btnCerrar.setForeground(Color.WHITE);
+        btnCerrar.setForeground(new Color(60, 60, 60));
         btnCerrar.setFont(new Font("Arial", Font.BOLD, 14));
         btnCerrar.setFocusPainted(false);
         btnCerrar.addActionListener(e -> dispose());
