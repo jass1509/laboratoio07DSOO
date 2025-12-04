@@ -35,7 +35,7 @@ public class VentanaCajeroAutomatico extends JDialog {
         panelPrincipal.setBackground(new Color(44, 62, 80));
         
         // Título
-        JLabel lblTitulo = new JLabel("🏧 CAJERO AUTOMÁTICO BCP", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("🏧 CAJERO AUTOMÁTICO", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setForeground(Color.WHITE);
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));

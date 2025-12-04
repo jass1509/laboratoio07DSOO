@@ -24,7 +24,7 @@ public class mainGUI {
     
     private static void inicializarSistema() {
         // Crear sistema
-        Sistema sistema = new Sistema("BANCO BCP", "CV2");
+        Sistema sistema = new Sistema("BANCO", "CV2");
         
         // ===== CREAR EMPLEADOS =====
         Empleado emp1 = new Empleado("Carlos", "Pérez", "912067512", "carlosP@gmail.com",
@@ -102,14 +102,14 @@ public class mainGUI {
         panel.setBorder(BorderFactory.createCompoundBorder());
         
         // Logo y título
-        JLabel lblLogo = new JLabel("🏦", SwingConstants.CENTER);
+        JLabel lblLogo = new JLabel("Banco", SwingConstants.CENTER);
         lblLogo.setFont(new Font("Arial", Font.PLAIN, 80));
         
-        JLabel lblTitulo = new JLabel("SISTEMA BANCARIO BCP", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("SISTEMA BANCARIO", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 28));
         lblTitulo.setForeground(new Color(41, 128, 185));
         
-        JLabel lblVersion = new JLabel("Versión 2.0 - Interfaz Gráfica", SwingConstants.CENTER);
+        JLabel lblVersion = new JLabel("Versión - Interfaz Gráfica", SwingConstants.CENTER);
         lblVersion.setFont(new Font("Arial", Font.PLAIN, 14));
         lblVersion.setForeground(Color.GRAY);
         

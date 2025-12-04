@@ -48,7 +48,7 @@ public class VentanaPrincipal extends JFrame {
         panelSuperior.setOpaque(false);
         panelSuperior.setLayout(new BorderLayout());
         
-        lblTitulo = new JLabel("SISTEMA BANCARIO BCP", SwingConstants.CENTER);
+        lblTitulo = new JLabel("SISTEMA BANCARIO ", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 32));
         lblTitulo.setForeground(Color.WHITE);
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0));
@@ -128,7 +128,7 @@ public class VentanaPrincipal extends JFrame {
         // Panel inferior
         JPanel panelInferior = new JPanel();
         panelInferior.setOpaque(false);
-        JLabel lblFooter = new JLabel("© 2025 Banco BCP - Sistema de Gestión Bancaria", SwingConstants.CENTER);
+        JLabel lblFooter = new JLabel("© 2025 banco - Sistema de Gestión Bancaria", SwingConstants.CENTER);
         lblFooter.setForeground(Color.WHITE);
         lblFooter.setFont(new Font("Arial", Font.ITALIC, 12));
         panelInferior.add(lblFooter);

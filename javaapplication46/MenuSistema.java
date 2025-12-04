@@ -18,7 +18,7 @@ public class MenuSistema {
     //Creacion de datos inicializados
     public MenuSistema() {
         //Creando objeto sistema
-            this.sistema = new Sistema("BANCO BCP", "CV2");
+            this.sistema = new Sistema("Banco", "CV2");
         this.sc = new Scanner(System.in);
             
         // Empleado 1
