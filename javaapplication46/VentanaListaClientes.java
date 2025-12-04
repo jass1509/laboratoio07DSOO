@@ -44,8 +44,8 @@ class VentanaListaClientes extends JDialog {
         tablaClientes.setFont(new Font("Arial", Font.PLAIN, 12));
         tablaClientes.setRowHeight(25);
         tablaClientes.getTableHeader().setFont(new Font("Arial", Font.BOLD, 12));
-        tablaClientes.getTableHeader().setBackground(new Color(41, 128, 185));
-        tablaClientes.getTableHeader().setForeground(Color.WHITE);
+        tablaClientes.getTableHeader().setBackground(new Color(92, 159, 204));
+        tablaClientes.getTableHeader().setForeground(new Color(41, 128, 185));
         
         JScrollPane scrollPane = new JScrollPane(tablaClientes);
         scrollPane.setPreferredSize(new Dimension(750, 400));
@@ -57,7 +57,7 @@ class VentanaListaClientes extends JDialog {
         JButton btnCerrar = new JButton("Cerrar");
         btnCerrar.setPreferredSize(new Dimension(150, 35));
         btnCerrar.setBackground(new Color(149, 165, 166));
-        btnCerrar.setForeground(Color.WHITE);
+        btnCerrar.setForeground(new Color(41, 128, 185));
         btnCerrar.setFont(new Font("Arial", Font.BOLD, 14));
         btnCerrar.setFocusPainted(false);
         btnCerrar.addActionListener(e -> dispose());
@@ -140,8 +140,8 @@ class VentanaListaEmpleados extends JDialog {
         tablaEmpleados.setFont(new Font("Arial", Font.PLAIN, 12));
         tablaEmpleados.setRowHeight(25);
         tablaEmpleados.getTableHeader().setFont(new Font("Arial", Font.BOLD, 12));
-        tablaEmpleados.getTableHeader().setBackground(new Color(52, 73, 94));
-        tablaEmpleados.getTableHeader().setForeground(Color.WHITE);
+        tablaEmpleados.getTableHeader().setBackground(new Color(92, 159, 204));
+        tablaEmpleados.getTableHeader().setForeground(new Color(41, 128, 185));
         
         JScrollPane scrollPane = new JScrollPane(tablaEmpleados);
         scrollPane.setPreferredSize(new Dimension(800, 400));
@@ -153,7 +153,7 @@ class VentanaListaEmpleados extends JDialog {
         JButton btnCerrar = new JButton("Cerrar");
         btnCerrar.setPreferredSize(new Dimension(150, 35));
         btnCerrar.setBackground(new Color(149, 165, 166));
-        btnCerrar.setForeground(Color.WHITE);
+        btnCerrar.setForeground(new Color(41, 128, 185));
         btnCerrar.setFont(new Font("Arial", Font.BOLD, 14));
         btnCerrar.setFocusPainted(false);
         btnCerrar.addActionListener(e -> dispose());
