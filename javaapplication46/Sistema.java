@@ -75,6 +75,11 @@ public class Sistema {
         return reporte;
     }
 
+    // Obtener lista de clientes
+    public ArrayList<Cliente> obtenerClientes() {
+        return listaClientes;
+    }
+
     @Override
     public String toString() {
         return "Sistema: " + nombreSistema +

@@ -79,32 +79,22 @@ class VentanaListaClientes extends JDialog {
     }
     
     private void cargarClientes() {
-        ArrayList<String> clientes = sistema.generarReporte("clientes");
-        
-        for (String clienteInfo : clientes) {
-            // Parsear la información del cliente
-            if (clienteInfo.contains("Cliente:")) {
-                String[] partes = clienteInfo.split("\\|");
-                if (partes.length >= 2) {
-                    String nombreCompleto = partes[0].replace("Cliente:", "").trim();
-                    String id = partes[1].replace("ID:", "").trim();
-                    
-                    // Buscar cliente para obtener más información
-                    Persona p = sistema.buscarPersona(id);
-                    if (p instanceof Cliente) {
-                        Cliente c = (Cliente) p;
-                        Object[] fila = {
-                            c.getIdCliente(),
-                            c.getNombreCompleto(),
-                            c.getTelefono(),
-                            c.getEmail(),
-                            c.calcularEdad() + " años",
-                            c.getTitularidades().size() + " cuenta(s)"
-                        };
-                        modeloTabla.addRow(fila);
-                    }
-                }
-            }
+        // Limpiar tabla antes de cargar
+        modeloTabla.setRowCount(0);
+
+        // Obtener lista de clientes directamente desde el sistema
+        ArrayList<Cliente> clientes = sistema.obtenerClientes();
+
+        for (Cliente c : clientes) {
+            Object[] fila = {
+                c.getIdCliente(),
+                c.getNombreCompleto(),
+                c.getTelefono(),
+                c.getEmail(),
+                c.calcularEdad() + " años",
+                c.getTitularidades().size() + " cuenta(s)"
+            };
+            modeloTabla.addRow(fila);
         }
     }
 }
