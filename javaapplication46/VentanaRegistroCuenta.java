@@ -11,6 +11,7 @@ public class VentanaRegistroCuenta extends JDialog {
     private JLabel lblClienteEncontrado;
     private Cliente clienteSeleccionado;
     
+    
     public VentanaRegistroCuenta(Frame parent, Sistema sistema) {
         super(parent, "Registrar Nueva Cuenta", true);
         this.sistema = sistema;
@@ -103,7 +104,7 @@ public class VentanaRegistroCuenta extends JDialog {
         btnCrear = new JButton("Crear Cuenta");
         btnCrear.setPreferredSize(new Dimension(150, 35));
         btnCrear.setBackground(new Color(46, 204, 113));
-        btnCrear.setForeground(Color.WHITE);
+        btnCrear.setForeground(new Color(60, 60, 60));
         btnCrear.setFont(new Font("Arial", Font.BOLD, 14));
         btnCrear.setFocusPainted(false);
         btnCrear.setEnabled(false);
@@ -112,7 +113,7 @@ public class VentanaRegistroCuenta extends JDialog {
         btnCancelar = new JButton("Cancelar");
         btnCancelar.setPreferredSize(new Dimension(150, 35));
         btnCancelar.setBackground(new Color(231, 76, 60));
-        btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setForeground(new Color(60,60,60));
         btnCancelar.setFont(new Font("Arial", Font.BOLD, 14));
         btnCancelar.setFocusPainted(false);
         btnCancelar.addActionListener(e -> dispose());
