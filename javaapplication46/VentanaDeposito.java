@@ -60,7 +60,7 @@ public class VentanaDeposito extends JDialog {
         gbc.gridx = 2; gbc.weightx = 0;
         btnBuscar = new JButton("Buscar");
         btnBuscar.setBackground(new Color(52, 152, 219));
-        btnBuscar.setForeground(Color.WHITE);
+        btnBuscar.setForeground(Color.BLACK);
         btnBuscar.setFocusPainted(false);
         btnBuscar.addActionListener(e -> buscarCliente());
         panelBusqueda.add(btnBuscar, gbc);
@@ -127,7 +127,7 @@ public class VentanaDeposito extends JDialog {
         btnDepositar = new JButton("Realizar Depósito");
         btnDepositar.setPreferredSize(new Dimension(170, 40));
         btnDepositar.setBackground(new Color(46, 204, 113));
-        btnDepositar.setForeground(Color.WHITE);
+        btnDepositar.setForeground(new Color(60, 60, 60));
         btnDepositar.setFont(new Font("Arial", Font.BOLD, 14));
         btnDepositar.setFocusPainted(false);
         btnDepositar.setEnabled(false);
@@ -136,7 +136,7 @@ public class VentanaDeposito extends JDialog {
         btnCancelar = new JButton("Cancelar");
         btnCancelar.setPreferredSize(new Dimension(150, 40));
         btnCancelar.setBackground(new Color(231, 76, 60));
-        btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setForeground(new Color(60,60,60));
         btnCancelar.setFont(new Font("Arial", Font.BOLD, 14));
         btnCancelar.setFocusPainted(false);
         btnCancelar.addActionListener(e -> dispose());
