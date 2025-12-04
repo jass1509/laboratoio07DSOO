@@ -60,7 +60,7 @@ public class VentanaRetiro extends JDialog {
         gbc.gridx = 2; gbc.weightx = 0;
         btnBuscar = new JButton("Buscar");
         btnBuscar.setBackground(new Color(52, 152, 219));
-        btnBuscar.setForeground(Color.WHITE);
+        btnBuscar.setForeground(Color.BLACK);
         btnBuscar.setFocusPainted(false);
         btnBuscar.addActionListener(e -> buscarCliente());
         panelBusqueda.add(btnBuscar, gbc);
@@ -137,7 +137,7 @@ public class VentanaRetiro extends JDialog {
         btnRetirar = new JButton("Realizar Retiro");
         btnRetirar.setPreferredSize(new Dimension(170, 40));
         btnRetirar.setBackground(new Color(231, 76, 60));
-        btnRetirar.setForeground(Color.WHITE);
+        btnRetirar.setForeground(new Color(60, 60, 60));
         btnRetirar.setFont(new Font("Arial", Font.BOLD, 14));
         btnRetirar.setFocusPainted(false);
         btnRetirar.setEnabled(false);
@@ -146,7 +146,7 @@ public class VentanaRetiro extends JDialog {
         btnCancelar = new JButton("Cancelar");
         btnCancelar.setPreferredSize(new Dimension(150, 40));
         btnCancelar.setBackground(new Color(149, 165, 166));
-        btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setForeground(new Color(60, 60, 60));
         btnCancelar.setFont(new Font("Arial", Font.BOLD, 14));
         btnCancelar.setFocusPainted(false);
         btnCancelar.addActionListener(e -> dispose());
