@@ -36,7 +36,7 @@ public class VentanaPrincipal extends JFrame {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
                 GradientPaint gp = new GradientPaint(0, 0, new Color(41, 128, 185), 
-                                                     0, getHeight(), new Color(109, 213, 250));
+                                                    0, getHeight(), new Color(109, 213, 250));
                 g2d.setPaint(gp);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
             }
@@ -160,7 +160,7 @@ public class VentanaPrincipal extends JFrame {
         btn.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent e) {
                 btn.setBackground(new Color(52, 152, 219));
-                btn.setForeground(Color.WHITE);
+                btn.setForeground(new Color(10, 100, 185));
             }
             public void mouseExited(MouseEvent e) {
                 btn.setBackground(Color.WHITE);
@@ -234,7 +234,7 @@ public class VentanaPrincipal extends JFrame {
     
     // Métodos para abrir ventanas
     private void abrirRegistroCliente() {
-        VentanaListaClientes ventana = new VentanaListaClientes(this, sistema);
+        VentanaRegistroCliente ventana = new VentanaRegistroCliente(this, sistema);
         ventana.setVisible(true);
     }
     
