@@ -66,8 +66,8 @@ public class GestorValidaciones {
     
     /* Valida el saldo inicial, asegurando que sea un valor positivo. */
     public static double validarSaldoInicial(Scanner sc) {
-          System.out.print("Saldo inicial (mínimo S/0.01): ");
-          while (true) {
+            System.out.print("Saldo inicial (mínimo S/0.01): ");
+            while (true) {
             try {
                 double saldo = Double.parseDouble(sc.nextLine());
                 if (saldo > 0) {
@@ -132,7 +132,7 @@ public class GestorValidaciones {
             dia = validarEntero(sc, prompt);
             if (dia >= 1 && dia <= 31) {
                 if ((dia == 31) && (prompt.toLowerCase().contains("abril") || prompt.toLowerCase().contains("junio") || 
-                                   prompt.toLowerCase().contains("septiembre") || prompt.toLowerCase().contains("noviembre"))) {
+                                    prompt.toLowerCase().contains("septiembre") || prompt.toLowerCase().contains("noviembre"))) {
                     System.out.println("Error: Este mes no tiene 31 días. Vuelva a ingresar.");
                 } else if ((dia > 29) && prompt.toLowerCase().contains("febrero")) {
                     System.out.println("Error: Febrero tiene un máximo de 29 días. Vuelva a ingresar.");
@@ -154,6 +154,19 @@ public class GestorValidaciones {
             return false;
         }
         return true;
+    }
+     /* Método nuevo: valida que un PIN tenga exactamente 4 dígitos. */
+    public static String verificarPin(Scanner sc) {
+        String pin;
+        while (true) {
+            System.out.print("Ingrese PIN (4 dígitos): ");
+            pin = sc.nextLine().trim();
+            if (pin.matches("\\d{4}")) {
+                return pin;
+            } else {
+                System.out.println("Error: El PIN debe contener exactamente 4 dígitos numéricos.");
+            }
+        }
     }
     
     /* Lee una opción del menú principal (1-11). */
