@@ -3,21 +3,16 @@ import java.awt.*;
 import java.time.LocalDate;
 import java.util.Random;
 
-/**
- * Clase principal para iniciar el sistema bancario con interfaz gráfica.
- * Esta clase inicializa el sistema con datos de prueba y lanza la ventana principal.
- */
+
 public class mainGUI {
 
     public static void main(String[] args) {
-        // Configurar Look and Feel del sistema operativo
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        // Ejecutar en el Event Dispatch Thread
         SwingUtilities.invokeLater(mainGUI::inicializarSistema);
     }
 
@@ -26,7 +21,7 @@ public class mainGUI {
         Sistema sistema = new Sistema("BANCO", "CV2");
         Random rand = new Random();
 
-        // ===== CREAR EMPLEADOS =====
+        //  CREAR EMPLEADOS 
         Empleado emp1 = new Empleado("Carlos", "Pérez", "912067512", "carlosP@gmail.com",
                 LocalDate.of(1990, 6, 12), "E001", LocalDate.now(), 2500.0, "Cajas", "6789");
         sistema.registrarPersona(emp1);
@@ -44,7 +39,7 @@ public class mainGUI {
                 LocalDate.of(2023, 1, 1), "EATM", LocalDate.now(), 0.0, "AUTOMÁTICO", "0000");
         sistema.registrarPersona(empleadoATM);
 
-        // ===== CREAR CLIENTES CON CUENTAS =====
+        //  CREAR CLIENTES CON CUENTAS 
         Cliente cli1 = new Cliente("Ana", "Zapana", "956564871", "anaZ@gmail.com",
                 LocalDate.of(1995, 4, 25), "C001", "1234");
         sistema.registrarPersona(cli1);
