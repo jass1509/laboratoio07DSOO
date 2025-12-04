@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.time.LocalDate;
 
 /**
@@ -97,8 +98,8 @@ public class mainGUI {
     private static void mostrarSplashScreen() {
         JWindow splash = new JWindow();
         
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setBorder(BorderFactory.createLineBorder(new Color(41, 128, 185), 3));
+        JPanel panel = new JPanel();
+        panel.setBorder(BorderFactory.createCompoundBorder());
         
         // Logo y título
         JLabel lblLogo = new JLabel("🏦", SwingConstants.CENTER);
