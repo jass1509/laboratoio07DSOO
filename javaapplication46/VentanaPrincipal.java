@@ -70,7 +70,7 @@ public class VentanaPrincipal extends JFrame {
         gbc.weightx = 1.0;
         
         // Crear botones principales
-        JButton btnRegistrarCliente = crearBoton("Registrar Cliente", 
+        JButton btnRegistrarCliente = crearBoton("Registrar Cliente"), 
         JButton btnRegistrarCuenta = crearBoton("Registrar Cuenta");
         JButton btnDeposito = crearBoton("Realizar Depósito" );
         JButton btnRetiro = crearBoton("Realizar Retiro" );

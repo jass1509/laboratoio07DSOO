@@ -122,7 +122,7 @@ class VentanaListaEmpleados extends JDialog {
         panelPrincipal.setBackground(Color.WHITE);
         
         // Título
-        JLabel lblTitulo = new JLabel("👔 Lista de Empleados", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Lista de Empleados", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 22));
         lblTitulo.setForeground(new Color(52, 73, 94));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));

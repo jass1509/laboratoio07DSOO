@@ -31,7 +31,7 @@ public class VentanaConsultaSaldo extends JDialog {
         panelPrincipal.setBackground(Color.WHITE);
         
         // Título
-        JLabel lblTitulo = new JLabel("📊 Consulta de Saldo", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Consulta de Saldo", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setForeground(new Color(52, 152, 219));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));

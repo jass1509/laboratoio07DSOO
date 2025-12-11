@@ -35,7 +35,7 @@ public class VentanaCajeroAutomatico extends JDialog {
         panelPrincipal.setBackground(new Color(44, 62, 80));
         
         // Título
-        JLabel lblTitulo = new JLabel("🏧 CAJERO AUTOMÁTICO", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("CAJERO AUTOMÁTICO", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setForeground(Color.WHITE);
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
@@ -171,7 +171,7 @@ public class VentanaCajeroAutomatico extends JDialog {
         String pin = new String(txtPin.getPassword());
         
         if (idCliente.isEmpty() || pin.isEmpty()) {
-            lblEstado.setText("❌ Complete todos los campos");
+            lblEstado.setText("Complete todos los campos");
             lblEstado.setForeground(Color.RED);
             return;
         }
@@ -183,7 +183,7 @@ public class VentanaCajeroAutomatico extends JDialog {
             
             if (cliente.getPin().equals(pin)) {
                 clienteAutenticado = cliente;
-                lblEstado.setText("✓ Bienvenido, " + cliente.getNombreCompleto());
+                lblEstado.setText("Bienvenido, " + cliente.getNombreCompleto());
                 lblEstado.setForeground(new Color(46, 204, 113));
                 
                 // Cargar cuentas
@@ -213,7 +213,7 @@ public class VentanaCajeroAutomatico extends JDialog {
                 btnAutenticar.setEnabled(false);
                 
             } else {
-                lblEstado.setText("❌ PIN incorrecto");
+                lblEstado.setText("PIN incorrecto");
                 lblEstado.setForeground(Color.RED);
                 JOptionPane.showMessageDialog(this,
                     "PIN incorrecto",
@@ -221,7 +221,7 @@ public class VentanaCajeroAutomatico extends JDialog {
                     JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            lblEstado.setText("❌ Cliente no encontrado");
+            lblEstado.setText("Cliente no encontrado");
             lblEstado.setForeground(Color.RED);
             JOptionPane.showMessageDialog(this,
                 "Cliente no encontrado",

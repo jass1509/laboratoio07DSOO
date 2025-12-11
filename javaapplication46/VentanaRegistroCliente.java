@@ -114,7 +114,7 @@ public class VentanaRegistroCliente extends JDialog {
         btnRegistrar.setFont(new Font("Arial", Font.BOLD, 14));
         btnRegistrar.setFocusPainted(false);
         btnRegistrar.addActionListener(e -> registrarCliente());
-        btnRegistrar.setEnabled(false); // 🔴 DESHABILITADO AL INICIO
+        btnRegistrar.setEnabled(false); // DESHABILITADO AL INICIO
 
         btnCancelar = new JButton("Cancelar");
         btnCancelar.setPreferredSize(new Dimension(150, 35));

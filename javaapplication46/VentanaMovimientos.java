@@ -32,7 +32,7 @@ public class VentanaMovimientos extends JDialog {
         panelPrincipal.setBackground(Color.WHITE);
         
         // Título
-        JLabel lblTitulo = new JLabel("📋 Historial de Movimientos", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Historial de Movimientos", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setForeground(new Color(155, 89, 182));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));

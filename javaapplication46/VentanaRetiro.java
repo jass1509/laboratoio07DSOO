@@ -33,7 +33,7 @@ public class VentanaRetiro extends JDialog {
         panelPrincipal.setBackground(Color.WHITE);
         
         // Título
-        JLabel lblTitulo = new JLabel("💸 Realizar Retiro", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Realizar Retiro", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setForeground(new Color(231, 76, 60));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));

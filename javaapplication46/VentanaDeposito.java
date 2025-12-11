@@ -33,7 +33,7 @@ public class VentanaDeposito extends JDialog {
         panelPrincipal.setBackground(Color.WHITE);
         
         // Título
-        JLabel lblTitulo = new JLabel("💰 Realizar Depósito", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Realizar Depósito", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setForeground(new Color(46, 204, 113));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
