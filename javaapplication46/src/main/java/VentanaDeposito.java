@@ -33,7 +33,7 @@ public class VentanaDeposito extends JDialog {
         panelPrincipal.setBackground(Color.WHITE);
         
         // Título
-        JLabel lblTitulo = new JLabel("💰 Realizar Depósito", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Realizar Depósito", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setForeground(new Color(46, 204, 113));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
@@ -180,7 +180,7 @@ public class VentanaDeposito extends JDialog {
         
         if (p instanceof Cliente) {
             clienteSeleccionado = (Cliente) p;
-            lblClienteInfo.setText("✓ Cliente: " + clienteSeleccionado.getNombreCompleto());
+            lblClienteInfo.setText("Cliente: " + clienteSeleccionado.getNombreCompleto());
             lblClienteInfo.setForeground(new Color(46, 204, 113));
             
             // Cargar cuentas
@@ -205,7 +205,7 @@ public class VentanaDeposito extends JDialog {
             }
         } else {
             clienteSeleccionado = null;
-            lblClienteInfo.setText("✗ Cliente no encontrado");
+            lblClienteInfo.setText("Cliente no encontrado");
             lblClienteInfo.setForeground(Color.RED);
             comboCuenta.removeAllItems();
             comboCuenta.setEnabled(false);

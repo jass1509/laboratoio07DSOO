@@ -114,7 +114,7 @@ public class VentanaRegistroCliente extends JDialog {
         btnRegistrar.setFont(new Font("Arial", Font.BOLD, 14));
         btnRegistrar.setFocusPainted(false);
         btnRegistrar.addActionListener(e -> registrarCliente());
-        btnRegistrar.setEnabled(false); // 🔴 DESHABILITADO AL INICIO
+        btnRegistrar.setEnabled(false); // DESHABILITADO AL INICIO
 
         btnCancelar = new JButton("Cancelar");
         btnCancelar.setPreferredSize(new Dimension(150, 35));
@@ -134,9 +134,8 @@ public class VentanaRegistroCliente extends JDialog {
         add(panelPrincipal);
     }
 
-    // ============================
     //   VALIDACIÓN DE CAMPOS
-    // ============================
+    
     private void agregarValidaciones() {
         DocumentListener validar = new DocumentListener() {
             public void insertUpdate(DocumentEvent e) { validarCampos(); }
@@ -182,9 +181,8 @@ public class VentanaRegistroCliente extends JDialog {
         }
     }
 
-    // ============================
     //   REGISTRAR CLIENTE
-    // ============================
+
     private void registrarCliente() {
         try {
             String id = txtIdCliente.getText().trim();

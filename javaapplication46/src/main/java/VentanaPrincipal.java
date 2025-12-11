@@ -70,16 +70,16 @@ public class VentanaPrincipal extends JFrame {
         gbc.weightx = 1.0;
         
         // Crear botones principales
-        JButton btnRegistrarCliente = crearBoton("Registrar Cliente", "👤");
-        JButton btnRegistrarCuenta = crearBoton("Registrar Cuenta", "🏦");
-        JButton btnDeposito = crearBoton("Realizar Depósito", "💰");
-        JButton btnRetiro = crearBoton("Realizar Retiro", "💸");
-        JButton btnConsultaSaldo = crearBoton("Consultar Saldo", "📊");
-        JButton btnMovimientos = crearBoton("Ver Movimientos", "📋");
-        JButton btnClientes = crearBoton("Ver Clientes", "👥");
-        JButton btnEmpleados = crearBoton("Ver Empleados", "👔");
-        JButton btnCajero = crearBoton("Cajero Automático", "🏧");
-        JButton btnSalir = crearBoton("Salir", "🚪");
+        JButton btnRegistrarCliente = crearBoton("Registrar Cliente");
+        JButton btnRegistrarCuenta = crearBoton("Registrar Cuenta");
+        JButton btnDeposito = crearBoton("Realizar Depósito");
+        JButton btnRetiro = crearBoton("Realizar Retiro");
+        JButton btnConsultaSaldo = crearBoton("Consultar Saldo");
+        JButton btnMovimientos = crearBoton("Ver Movimientos");
+        JButton btnClientes = crearBoton("Ver Clientes");
+        JButton btnEmpleados = crearBoton("Ver Empleados");
+        JButton btnCajero = crearBoton("Cajero Automático");
+        JButton btnSalir = crearBoton("Salir");
         
         // Agregar botones en grid
         gbc.gridx = 0; gbc.gridy = 0;
@@ -144,8 +144,8 @@ public class VentanaPrincipal extends JFrame {
         crearMenu();
     }
     
-    private JButton crearBoton(String texto, String icono) {
-        JButton btn = new JButton("<html><center>" + icono + "<br>" + texto + "</center></html>");
+    private JButton crearBoton(String texto) {
+        JButton btn = new JButton("<html><center>" + texto + "</center></html>");
         btn.setFont(new Font("Arial", Font.BOLD, 14));
         btn.setPreferredSize(new Dimension(200, 80));
         btn.setBackground(Color.WHITE);
